@@ -1,0 +1,5 @@
+<map id="SICAD::setBackground" name="SICAD::setBackground">
+<area shape="rect" id="node2" href="$classSICAD.html#a8033a99745f595ea5205e3830cabc389" title="SICAD::getMipmapsOpt" alt="" coords="209,5,371,32"/>
+<area shape="rect" id="node3" href="$classShader.html#a8e53260be208ebf6c804a0d309e74097" title="Shader::install" alt="" coords="237,56,343,83"/>
+<area shape="rect" id="node4" href="$classShader.html#afa6fb33b37c9385cf62a836092da570b" title="Shader::uninstall" alt="" coords="231,107,349,133"/>
+</map>

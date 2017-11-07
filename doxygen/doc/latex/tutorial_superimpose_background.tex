@@ -1,0 +1,70 @@
+This tutorial is based upon the \mbox{\hyperlink{tutorial_superimpose}{previous one}} and explain how to add a background image to the rendering process. Our good ol\textquotesingle{} fiend 👾 from Space Invaders will finally have the {\itshape Space} behind him.
+
+ One of the main reason to why this is important, and to why actually this library exists, is that in computer vision and augmented-\/reality applications you want your mesh to be in a specific pose relative to a camera viewpoint. As a consequence, you usually have an image grabbed from a camera and the pose of an object relative to it.~\newline
+
+
+
+\begin{DoxyCodeInclude}
+1 \textcolor{preprocessor}{#include <cmath>}
+2 \textcolor{preprocessor}{#include <exception>}
+3 \textcolor{preprocessor}{#include <iostream>}
+4 \textcolor{preprocessor}{#include <string>}
+5 
+6 \textcolor{preprocessor}{#include <glm/glm.hpp>}
+7 \textcolor{preprocessor}{#include <glm/gtc/matrix\_transform.hpp>}
+8 \textcolor{preprocessor}{#include <opencv2/core/core.hpp>}
+9 \textcolor{preprocessor}{#include <opencv2/imgcodecs/imgcodecs.hpp>}
+10 \textcolor{preprocessor}{#include <opencv2/imgproc/imgproc.hpp>}
+11 \textcolor{preprocessor}{#include <\mbox{\hyperlink{SICAD_8h}{SuperimposeMesh/SICAD.h}}>}
+12 
+13 
+14 \textcolor{keywordtype}{int} \mbox{\hyperlink{tutorial__background_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}}()
+15 \{
+16     \textcolor{keyword}{const} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} cam\_width  = 320;
+17     \textcolor{keyword}{const} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} cam\_height = 240;
+18     \textcolor{keyword}{const} \textcolor{keywordtype}{float}        cam\_fx     = 257.34;
+19     \textcolor{keyword}{const} \textcolor{keywordtype}{float}        cam\_cx     = 160;
+20     \textcolor{keyword}{const} \textcolor{keywordtype}{float}        cam\_fy     = 257.34;
+21     \textcolor{keyword}{const} \textcolor{keywordtype}{float}        cam\_cy     = 120;
+22 
+23     \mbox{\hyperlink{classSICAD_a9e1e1460d4c0f331b4fd015aae4dd721}{SICAD::ModelPathContainer}} obj;
+24     obj.emplace(\textcolor{stringliteral}{"alien"}, \textcolor{stringliteral}{"./Space\_Invader.obj"});
+25 
+26     \mbox{\hyperlink{classSICAD}{SICAD}} si\_cad(obj,
+27                  cam\_width, cam\_height, cam\_fx, cam\_fy, cam\_cx, cam\_cy,
+28                  \textcolor{stringliteral}{"."},
+29                  \textcolor{keyword}{true});
+30 
+31     \mbox{\hyperlink{classSuperimpose_a85d40a5caf19f486d1e0c15c0a025378}{Superimpose::ModelPose}} obj\_pose(7);
+32     obj\_pose[0] = 0;
+33     obj\_pose[1] = 0;
+34     obj\_pose[2] = -0.1;
+35     obj\_pose[3] = 1;
+36     obj\_pose[4] = 0;
+37     obj\_pose[5] = 0;
+38     obj\_pose[6] = 0;
+39 
+40     \mbox{\hyperlink{classSuperimpose_a178e3d4e2def6635bfcf9454dd4b5d22}{Superimpose::ModelPoseContainer}} objpose\_map;
+41     objpose\_map.emplace(\textcolor{stringliteral}{"alien"}, obj\_pose);
+42 
+43     \textcolor{keywordtype}{double} cam\_x[] = \{  0, 0, 0\};
+44     \textcolor{keywordtype}{double} cam\_o[] = \{1.0, 0, 0, 0\};
+45 \textcolor{comment}{}
+46 \textcolor{comment}{    /**}
+47 \textcolor{comment}{     * It's background time!}
+48 \textcolor{comment}{     * The steps are the same, but now the cv::Mat is created from an image and}
+49 \textcolor{comment}{     * we instruct the SICAD class to draw the background (as a texture, ed)}
+50 \textcolor{comment}{     * with setBackgroundOpt(true).}
+51 \textcolor{comment}{     * That's it!}
+52 \textcolor{comment}{     **/}
+53     cv::Mat img = cv::imread(\textcolor{stringliteral}{"./space.png"});
+54     si\_cad.setBackgroundOpt(\textcolor{keyword}{true});
+55     si\_cad.superimpose(objpose\_map, cam\_x, cam\_o, img);
+56     cv::imwrite(\textcolor{stringliteral}{"./Space\_Invader.jpg"}, img);
+57 
+58     \textcolor{keywordflow}{return} EXIT\_SUCCESS;
+59 \}
+\end{DoxyCodeInclude}
+
+
+You should get something like this\+: 

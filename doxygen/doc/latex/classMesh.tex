@@ -1,0 +1,196 @@
+\hypertarget{classMesh}{}\section{Mesh Class Reference}
+\label{classMesh}\index{Mesh@{Mesh}}
+
+
+{\ttfamily \#include $<$Mesh.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classMesh_af1baf95f510199fd2b3631e9daae79ce}{Mesh}} (std\+::vector$<$ \mbox{\hyperlink{structVertex}{Vertex}} $>$ \mbox{\hyperlink{classMesh_a6465a888c97232a39e12aad008c969c3}{vertices}}, std\+::vector$<$ G\+Luint $>$ \mbox{\hyperlink{classMesh_a5e55b84c6c967608bcf23ed7d68e4215}{indices}}, std\+::vector$<$ \mbox{\hyperlink{structTexture}{Texture}} $>$ \mbox{\hyperlink{classMesh_abf1e672703bf4f8e104f3b076faaf958}{textures}})
+\item 
+void \mbox{\hyperlink{classMesh_a143c8d7c179801c6377853db26d4a19f}{Draw}} (\mbox{\hyperlink{classShader}{Shader}} shader)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ \mbox{\hyperlink{structVertex}{Vertex}} $>$ \mbox{\hyperlink{classMesh_a6465a888c97232a39e12aad008c969c3}{vertices}}
+\item 
+std\+::vector$<$ G\+Luint $>$ \mbox{\hyperlink{classMesh_a5e55b84c6c967608bcf23ed7d68e4215}{indices}}
+\item 
+std\+::vector$<$ \mbox{\hyperlink{structTexture}{Texture}} $>$ \mbox{\hyperlink{classMesh_abf1e672703bf4f8e104f3b076faaf958}{textures}}
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classMesh_aafa4e21067a9b0c4407daf5e3c9ea991}{setup\+Mesh}} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+G\+Luint \mbox{\hyperlink{classMesh_a09b989b9d4df8ae595d7e80e091a4a5b}{V\+AO}}
+\item 
+G\+Luint \mbox{\hyperlink{classMesh_a0d28b2c6fee628a13f43cae3f858569b}{V\+BO}}
+\item 
+G\+Luint \mbox{\hyperlink{classMesh_a894c6723c0172f4e38b2509582abfa6c}{E\+BO}}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 28 of file Mesh.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classMesh_af1baf95f510199fd2b3631e9daae79ce}\label{classMesh_af1baf95f510199fd2b3631e9daae79ce}} 
+\index{Mesh@{Mesh}!Mesh@{Mesh}}
+\index{Mesh@{Mesh}!Mesh@{Mesh}}
+\subsubsection{\texorpdfstring{Mesh()}{Mesh()}}
+{\footnotesize\ttfamily Mesh\+::\+Mesh (\begin{DoxyParamCaption}\item[{std\+::vector$<$ \mbox{\hyperlink{structVertex}{Vertex}} $>$}]{vertices,  }\item[{std\+::vector$<$ G\+Luint $>$}]{indices,  }\item[{std\+::vector$<$ \mbox{\hyperlink{structTexture}{Texture}} $>$}]{textures }\end{DoxyParamCaption})}
+
+
+
+Definition at line 10 of file Mesh.\+cpp.
+
+
+
+References indices, setup\+Mesh(), textures, and vertices.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=282pt]{classMesh_af1baf95f510199fd2b3631e9daae79ce_cgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classMesh_a143c8d7c179801c6377853db26d4a19f}\label{classMesh_a143c8d7c179801c6377853db26d4a19f}} 
+\index{Mesh@{Mesh}!Draw@{Draw}}
+\index{Draw@{Draw}!Mesh@{Mesh}}
+\subsubsection{\texorpdfstring{Draw()}{Draw()}}
+{\footnotesize\ttfamily void Mesh\+::\+Draw (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classShader}{Shader}}}]{shader }\end{DoxyParamCaption})}
+
+
+
+Definition at line 50 of file Mesh.\+cpp.
+
+
+
+References indices, and V\+AO.
+
+\mbox{\Hypertarget{classMesh_aafa4e21067a9b0c4407daf5e3c9ea991}\label{classMesh_aafa4e21067a9b0c4407daf5e3c9ea991}} 
+\index{Mesh@{Mesh}!setup\+Mesh@{setup\+Mesh}}
+\index{setup\+Mesh@{setup\+Mesh}!Mesh@{Mesh}}
+\subsubsection{\texorpdfstring{setup\+Mesh()}{setupMesh()}}
+{\footnotesize\ttfamily void Mesh\+::setup\+Mesh (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 20 of file Mesh.\+cpp.
+
+
+
+References E\+BO, indices, V\+AO, V\+BO, and vertices.
+
+
+
+Referenced by Mesh().
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classMesh_a894c6723c0172f4e38b2509582abfa6c}\label{classMesh_a894c6723c0172f4e38b2509582abfa6c}} 
+\index{Mesh@{Mesh}!E\+BO@{E\+BO}}
+\index{E\+BO@{E\+BO}!Mesh@{Mesh}}
+\subsubsection{\texorpdfstring{E\+BO}{EBO}}
+{\footnotesize\ttfamily G\+Luint Mesh\+::\+E\+BO\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 44 of file Mesh.\+h.
+
+
+
+Referenced by setup\+Mesh().
+
+\mbox{\Hypertarget{classMesh_a5e55b84c6c967608bcf23ed7d68e4215}\label{classMesh_a5e55b84c6c967608bcf23ed7d68e4215}} 
+\index{Mesh@{Mesh}!indices@{indices}}
+\index{indices@{indices}!Mesh@{Mesh}}
+\subsubsection{\texorpdfstring{indices}{indices}}
+{\footnotesize\ttfamily std\+::vector$<$G\+Luint$>$ Mesh\+::indices}
+
+
+
+Definition at line 37 of file Mesh.\+h.
+
+
+
+Referenced by Draw(), Mesh(), and setup\+Mesh().
+
+\mbox{\Hypertarget{classMesh_abf1e672703bf4f8e104f3b076faaf958}\label{classMesh_abf1e672703bf4f8e104f3b076faaf958}} 
+\index{Mesh@{Mesh}!textures@{textures}}
+\index{textures@{textures}!Mesh@{Mesh}}
+\subsubsection{\texorpdfstring{textures}{textures}}
+{\footnotesize\ttfamily std\+::vector$<$\mbox{\hyperlink{structTexture}{Texture}}$>$ Mesh\+::textures}
+
+
+
+Definition at line 38 of file Mesh.\+h.
+
+
+
+Referenced by Mesh().
+
+\mbox{\Hypertarget{classMesh_a09b989b9d4df8ae595d7e80e091a4a5b}\label{classMesh_a09b989b9d4df8ae595d7e80e091a4a5b}} 
+\index{Mesh@{Mesh}!V\+AO@{V\+AO}}
+\index{V\+AO@{V\+AO}!Mesh@{Mesh}}
+\subsubsection{\texorpdfstring{V\+AO}{VAO}}
+{\footnotesize\ttfamily G\+Luint Mesh\+::\+V\+AO\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 42 of file Mesh.\+h.
+
+
+
+Referenced by Draw(), and setup\+Mesh().
+
+\mbox{\Hypertarget{classMesh_a0d28b2c6fee628a13f43cae3f858569b}\label{classMesh_a0d28b2c6fee628a13f43cae3f858569b}} 
+\index{Mesh@{Mesh}!V\+BO@{V\+BO}}
+\index{V\+BO@{V\+BO}!Mesh@{Mesh}}
+\subsubsection{\texorpdfstring{V\+BO}{VBO}}
+{\footnotesize\ttfamily G\+Luint Mesh\+::\+V\+BO\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 43 of file Mesh.\+h.
+
+
+
+Referenced by setup\+Mesh().
+
+\mbox{\Hypertarget{classMesh_a6465a888c97232a39e12aad008c969c3}\label{classMesh_a6465a888c97232a39e12aad008c969c3}} 
+\index{Mesh@{Mesh}!vertices@{vertices}}
+\index{vertices@{vertices}!Mesh@{Mesh}}
+\subsubsection{\texorpdfstring{vertices}{vertices}}
+{\footnotesize\ttfamily std\+::vector$<$\mbox{\hyperlink{structVertex}{Vertex}}$>$ Mesh\+::vertices}
+
+
+
+Definition at line 36 of file Mesh.\+h.
+
+
+
+Referenced by Mesh(), and setup\+Mesh().
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/cfantacci/\+Git\+Hub/superimpose-\/mesh-\/lib/src/\+Superimpose\+Mesh/include/\+Superimpose\+Mesh/\mbox{\hyperlink{Mesh_8h}{Mesh.\+h}}\item 
+C\+:/\+Users/cfantacci/\+Git\+Hub/superimpose-\/mesh-\/lib/src/\+Superimpose\+Mesh/src/\mbox{\hyperlink{Mesh_8cpp}{Mesh.\+cpp}}\end{DoxyCompactItemize}

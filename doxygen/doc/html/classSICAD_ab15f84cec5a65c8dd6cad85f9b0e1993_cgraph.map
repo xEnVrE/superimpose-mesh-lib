@@ -1,0 +1,11 @@
+<map id="SICAD::superimpose" name="SICAD::superimpose">
+<area shape="rect" id="node2" href="$classSICAD.html#a170bd325654aed9eb81062ac610608fa" title="SICAD::getBackgroundOpt" alt="" coords="207,5,385,32"/>
+<area shape="rect" id="node3" href="$classSICAD.html#a1bdece095865249df4cb4e6a7ad2901e" title="SICAD::getViewTransformation\lMatrix" alt="" coords="196,57,396,98"/>
+<area shape="rect" id="node4" href="$classSICAD.html#af65b5ad73e2c0e872face157b56bd68b" title="SICAD::getWireframeOpt" alt="" coords="213,123,379,149"/>
+<area shape="rect" id="node5" href="$classShader.html#a8e53260be208ebf6c804a0d309e74097" title="Shader::install" alt="" coords="472,199,577,225"/>
+<area shape="rect" id="node6" href="$classSICAD.html#a8238a2b2c488c8b7ba85d5b2a0bf00ac" title="SICAD::pollOrPostEvent" alt="" coords="215,224,377,251"/>
+<area shape="rect" id="node7" href="$classSICAD.html#a25b180f54f2e93d69b291cc225600c8e" title="SICAD::setBackground" alt="" coords="218,275,374,301"/>
+<area shape="rect" id="node9" href="$classShader.html#afa6fb33b37c9385cf62a836092da570b" title="Shader::uninstall" alt="" coords="465,325,584,352"/>
+<area shape="rect" id="node10" href="$classSICAD.html#ae7af7aba5d81b9f1cc3e273a55811a70" title="SICAD::setWireframe" alt="" coords="223,376,369,403"/>
+<area shape="rect" id="node8" href="$classSICAD.html#a8033a99745f595ea5205e3830cabc389" title="SICAD::getMipmapsOpt" alt="" coords="444,275,605,301"/>
+</map>

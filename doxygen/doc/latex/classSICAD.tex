@@ -1,0 +1,1477 @@
+\hypertarget{classSICAD}{}\section{S\+I\+C\+AD Class Reference}
+\label{classSICAD}\index{S\+I\+C\+AD@{S\+I\+C\+AD}}
+
+
+A \mbox{\hyperlink{classSuperimpose}{Superimpose}} derived class to superimpose mesh models on top of images.  
+
+
+
+
+{\ttfamily \#include $<$S\+I\+C\+A\+D.\+h$>$}
+
+
+
+Inheritance diagram for S\+I\+C\+AD\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=154pt]{classSICAD__inherit__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{classSICAD_a7e092dede6f660355462d6d548214198}{M\+I\+P\+Maps}} \{ \mbox{\hyperlink{classSICAD_a7e092dede6f660355462d6d548214198ad879c351426770bc0b13c3628db1e636}{M\+I\+P\+Maps\+::nearest}}, 
+\mbox{\hyperlink{classSICAD_a7e092dede6f660355462d6d548214198a9a932b3cb396238423eb2f33ec17d6aa}{M\+I\+P\+Maps\+::linear}}
+ \}
+\item 
+typedef std\+::unordered\+\_\+map$<$ std\+::string, std\+::string $>$ \mbox{\hyperlink{classSICAD_a9e1e1460d4c0f331b4fd015aae4dd721}{Model\+Path\+Container}}
+\item 
+typedef std\+::pair$<$ std\+::string, std\+::string $>$ \mbox{\hyperlink{classSICAD_a5148c8a96c82625706ce2e5b86b52dd7}{Model\+Path\+Element}}
+\item 
+typedef std\+::unordered\+\_\+map$<$ std\+::string, \mbox{\hyperlink{classModel}{Model}} $\ast$ $>$ \mbox{\hyperlink{classSICAD_aca3c9693d298f2e8dc171194c6a7507c}{Model\+Container}}
+\item 
+typedef std\+::pair$<$ std\+::string, \mbox{\hyperlink{classModel}{Model}} $\ast$ $>$ \mbox{\hyperlink{classSICAD_af999665097d7cdf11780735bf24a6956}{Model\+Element}}
+\item 
+typedef std\+::vector$<$ double $>$ \mbox{\hyperlink{classSuperimpose_a85d40a5caf19f486d1e0c15c0a025378}{Model\+Pose}}
+\item 
+typedef std\+::multimap$<$ std\+::string, \mbox{\hyperlink{classSuperimpose_a85d40a5caf19f486d1e0c15c0a025378}{Model\+Pose}} $>$ \mbox{\hyperlink{classSuperimpose_a178e3d4e2def6635bfcf9454dd4b5d22}{Model\+Pose\+Container}}
+\item 
+typedef std\+::pair$<$ std\+::string, \mbox{\hyperlink{classSuperimpose_a85d40a5caf19f486d1e0c15c0a025378}{Model\+Pose}} $>$ \mbox{\hyperlink{classSuperimpose_a1e02e0225687b42296dcfee4eadf8a55}{Model\+Pose\+Container\+Element}}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classSICAD_a6fe9d4a644f468438264842896684a2c}{S\+I\+C\+AD}} ()
+\item 
+\mbox{\hyperlink{classSICAD_af6f17b4221b2d2725de7663c1a990175}{S\+I\+C\+AD}} (const \mbox{\hyperlink{classSICAD_a9e1e1460d4c0f331b4fd015aae4dd721}{Model\+Path\+Container}} \&objfile\+\_\+map, const bool window\+\_\+visible)
+\item 
+\mbox{\hyperlink{classSICAD_aa3cd941a7aa5f6620c6591c3b21a081c}{S\+I\+C\+AD}} (const \mbox{\hyperlink{classSICAD_a9e1e1460d4c0f331b4fd015aae4dd721}{Model\+Path\+Container}} \&objfile\+\_\+map, const std\+::string \&shader\+\_\+folder, const bool window\+\_\+visible)
+\item 
+\mbox{\hyperlink{classSICAD_a2f0ac6e07e5b0cf7e8a99205bf4bc447}{S\+I\+C\+AD}} (const \mbox{\hyperlink{classSICAD_a9e1e1460d4c0f331b4fd015aae4dd721}{Model\+Path\+Container}} \&objfile\+\_\+map, const G\+Lsizei cam\+\_\+width, const G\+Lsizei cam\+\_\+height, const std\+::string \&shader\+\_\+folder, const bool window\+\_\+visible)
+\item 
+\mbox{\hyperlink{classSICAD_abebce8e8feb344ad23caed3e2a8b732a}{S\+I\+C\+AD}} (const \mbox{\hyperlink{classSICAD_a9e1e1460d4c0f331b4fd015aae4dd721}{Model\+Path\+Container}} \&objfile\+\_\+map, const G\+Lsizei cam\+\_\+width, const G\+Lsizei cam\+\_\+height, const G\+Lint num\+\_\+images, const std\+::string \&shader\+\_\+folder, const bool window\+\_\+visible)
+\item 
+\mbox{\hyperlink{classSICAD_abcb9bb154f73472447affb9bb16dcec7}{S\+I\+C\+AD}} (const \mbox{\hyperlink{classSICAD_a9e1e1460d4c0f331b4fd015aae4dd721}{Model\+Path\+Container}} \&objfile\+\_\+map, const G\+Lsizei cam\+\_\+width, const G\+Lsizei cam\+\_\+height, const G\+Lint num\+\_\+images, const std\+::vector$<$ float $>$ \&ogl\+\_\+to\+\_\+cam, const std\+::string \&shader\+\_\+folder, const bool window\+\_\+visible)
+\item 
+\mbox{\hyperlink{classSICAD_a6ddc65ccbfea740515782c4b0dc25a0c}{S\+I\+C\+AD}} (const \mbox{\hyperlink{classSICAD_a9e1e1460d4c0f331b4fd015aae4dd721}{Model\+Path\+Container}} \&objfile\+\_\+map, const G\+Lsizei cam\+\_\+width, const G\+Lsizei cam\+\_\+height, const G\+Lfloat cam\+\_\+fx, const G\+Lfloat cam\+\_\+fy, const G\+Lfloat cam\+\_\+cx, const G\+Lfloat cam\+\_\+cy, const std\+::string \&shader\+\_\+folder, const bool window\+\_\+visible)
+\item 
+\mbox{\hyperlink{classSICAD_a1d217cbdc1670f8c5885c413e4acbede}{S\+I\+C\+AD}} (const \mbox{\hyperlink{classSICAD_a9e1e1460d4c0f331b4fd015aae4dd721}{Model\+Path\+Container}} \&objfile\+\_\+map, const G\+Lsizei cam\+\_\+width, const G\+Lsizei cam\+\_\+height, const G\+Lfloat cam\+\_\+fx, const G\+Lfloat cam\+\_\+fy, const G\+Lfloat cam\+\_\+cx, const G\+Lfloat cam\+\_\+cy, const G\+Lint num\+\_\+images, const std\+::string \&shader\+\_\+folder, const bool window\+\_\+visible)
+\item 
+\mbox{\hyperlink{classSICAD_ac4e6349b361e3ec41d828e0d0f77f12b}{S\+I\+C\+AD}} (const \mbox{\hyperlink{classSICAD_a9e1e1460d4c0f331b4fd015aae4dd721}{Model\+Path\+Container}} \&objfile\+\_\+map, const G\+Lsizei cam\+\_\+width, const G\+Lsizei cam\+\_\+height, const G\+Lfloat cam\+\_\+fx, const G\+Lfloat cam\+\_\+fy, const G\+Lfloat cam\+\_\+cx, const G\+Lfloat cam\+\_\+cy, const G\+Lint num\+\_\+images, const std\+::vector$<$ float $>$ \&ogl\+\_\+to\+\_\+cam, const std\+::string \&shader\+\_\+folder, const bool window\+\_\+visible)
+\begin{DoxyCompactList}\small\item\em Create a \mbox{\hyperlink{classSICAD}{S\+I\+C\+AD}} object with a dedicated Open\+GL window and context. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classSICAD_a04e1291dc1a51b2dee87dbe9a5b3a316}{init\+S\+I\+C\+AD}} (const \mbox{\hyperlink{classSICAD_a9e1e1460d4c0f331b4fd015aae4dd721}{Model\+Path\+Container}} \&objfile\+\_\+map, const G\+Lsizei cam\+\_\+width, const G\+Lsizei cam\+\_\+height, const G\+Lint num\+\_\+images, const std\+::vector$<$ float $>$ \&ogl\+\_\+to\+\_\+cam, const std\+::string \&shader\+\_\+folder, const bool window\+\_\+visible)
+\item 
+bool \mbox{\hyperlink{classSICAD_abb2b0250a885435828d5255645e06ac8}{init\+S\+I\+C\+AD}} (const \mbox{\hyperlink{classSICAD_a9e1e1460d4c0f331b4fd015aae4dd721}{Model\+Path\+Container}} \&objfile\+\_\+map, const G\+Lsizei cam\+\_\+width, const G\+Lsizei cam\+\_\+height, const G\+Lfloat cam\+\_\+fx, const G\+Lfloat cam\+\_\+fy, const G\+Lfloat cam\+\_\+cx, const G\+Lfloat cam\+\_\+cy, const G\+Lint num\+\_\+images, const std\+::vector$<$ float $>$ \&ogl\+\_\+to\+\_\+cam, const std\+::string \&shader\+\_\+folder, const bool window\+\_\+visible)
+\item 
+virtual \mbox{\hyperlink{classSICAD_a4e3d6d1f90ea2261dcd8507ee8709360}{$\sim$\+S\+I\+C\+AD}} ()
+\item 
+bool \mbox{\hyperlink{classSICAD_aaf003ab2ac8bc5ebdef6611ca1547e73}{get\+Ogl\+Window\+Should\+Close}} ()
+\item 
+void \mbox{\hyperlink{classSICAD_a0e42acab32252ddc878794f365ee1037}{set\+Ogl\+Window\+Should\+Close}} (bool should\+\_\+close)
+\item 
+bool \mbox{\hyperlink{classSICAD_a356e0ac8a0f130952a72326bedd4ab60}{superimpose}} (const \mbox{\hyperlink{classSuperimpose_a178e3d4e2def6635bfcf9454dd4b5d22}{Model\+Pose\+Container}} \&objpos\+\_\+map, const double $\ast$cam\+\_\+x, const double $\ast$cam\+\_\+o, cv\+::\+Mat \&img) override
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classSuperimpose}{Superimpose}} one of the mesh models loaded during \mbox{\hyperlink{classSICAD}{S\+I\+C\+AD}} object construction in a given pose from a particular camera viewpoint. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{classSICAD_ab15f84cec5a65c8dd6cad85f9b0e1993}{superimpose}} (const std\+::vector$<$ \mbox{\hyperlink{classSuperimpose_a178e3d4e2def6635bfcf9454dd4b5d22}{Model\+Pose\+Container}} $>$ \&objpos\+\_\+multimap, const double $\ast$cam\+\_\+x, const double $\ast$cam\+\_\+o, cv\+::\+Mat \&img)
+\item 
+virtual bool \mbox{\hyperlink{classSICAD_af6c19a679de29992c5f9609f4424add0}{superimpose}} (const \mbox{\hyperlink{classSuperimpose_a178e3d4e2def6635bfcf9454dd4b5d22}{Model\+Pose\+Container}} \&objpos\+\_\+map, const double $\ast$cam\+\_\+x, const double $\ast$cam\+\_\+o, cv\+::\+Mat \&img, const G\+Lsizei cam\+\_\+width, const G\+Lsizei cam\+\_\+height, const G\+Lfloat cam\+\_\+fx, const G\+Lfloat cam\+\_\+fy, const G\+Lfloat cam\+\_\+cx, const G\+Lfloat cam\+\_\+cy)
+\item 
+virtual bool \mbox{\hyperlink{classSICAD_a269e238387393b44177daa4eae88fedd}{superimpose}} (const std\+::vector$<$ \mbox{\hyperlink{classSuperimpose_a178e3d4e2def6635bfcf9454dd4b5d22}{Model\+Pose\+Container}} $>$ \&objpos\+\_\+multimap, const double $\ast$cam\+\_\+x, const double $\ast$cam\+\_\+o, cv\+::\+Mat \&img, const G\+Lsizei cam\+\_\+width, const G\+Lsizei cam\+\_\+height, const G\+Lfloat cam\+\_\+fx, const G\+Lfloat cam\+\_\+fy, const G\+Lfloat cam\+\_\+cx, const G\+Lfloat cam\+\_\+cy)
+\item 
+bool \mbox{\hyperlink{classSICAD_a39cdff6871d32429d8ba95b776e0b874}{set\+Projection\+Matrix}} (const G\+Lsizei cam\+\_\+width, const G\+Lsizei cam\+\_\+height, const G\+Lfloat cam\+\_\+fx, const G\+Lfloat cam\+\_\+fy, const G\+Lfloat cam\+\_\+cx, const G\+Lfloat cam\+\_\+cy)
+\item 
+bool \mbox{\hyperlink{classSICAD_a170bd325654aed9eb81062ac610608fa}{get\+Background\+Opt}} () const
+\item 
+void \mbox{\hyperlink{classSICAD_a07921943ad3d4016dcbe76135e799754}{set\+Background\+Opt}} (bool show\+\_\+background)
+\item 
+G\+Lenum \mbox{\hyperlink{classSICAD_af65b5ad73e2c0e872face157b56bd68b}{get\+Wireframe\+Opt}} () const
+\item 
+void \mbox{\hyperlink{classSICAD_a4cf80a273b6b0d946cd298472c63ddd4}{set\+Wireframe\+Opt}} (bool show\+\_\+mesh\+\_\+wires)
+\item 
+\mbox{\hyperlink{classSICAD_a7e092dede6f660355462d6d548214198}{M\+I\+P\+Maps}} \mbox{\hyperlink{classSICAD_a8033a99745f595ea5205e3830cabc389}{get\+Mipmaps\+Opt}} () const
+\item 
+int \mbox{\hyperlink{classSICAD_a728f82ebbfeea54f3fef2fc0c56a4964}{get\+Tiles\+Number}} () const
+\item 
+int \mbox{\hyperlink{classSICAD_a9e3dd48dfd83ea0bd00d64dacc4fbd40}{get\+Tiles\+Rows}} () const
+\item 
+int \mbox{\hyperlink{classSICAD_a2ba3a0aeb3dab9996bdeed19a16eae56}{get\+Tiles\+Cols}} () const
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{classSICAD_a102619690ab32e300405d22d52e36a5e}{init\+O\+GL}} (const G\+Lsizei width, const G\+Lsizei height, const G\+Lint num\+\_\+viewports, const bool window\+\_\+visibile)
+\item 
+glm\+::mat4 \mbox{\hyperlink{classSICAD_a1bdece095865249df4cb4e6a7ad2901e}{get\+View\+Transformation\+Matrix}} (const double $\ast$cam\+\_\+x, const double $\ast$cam\+\_\+o)
+\item 
+void \mbox{\hyperlink{classSICAD_a8238a2b2c488c8b7ba85d5b2a0bf00ac}{poll\+Or\+Post\+Event}} ()
+\item 
+void \mbox{\hyperlink{classSICAD_a25b180f54f2e93d69b291cc225600c8e}{set\+Background}} (cv\+::\+Mat \&img)
+\item 
+void \mbox{\hyperlink{classSICAD_ae7af7aba5d81b9f1cc3e273a55811a70}{set\+Wireframe}} (G\+Lenum mode)
+\item 
+void \mbox{\hyperlink{classSICAD_a2603ec5cb9a31bc7be0a335ef513ab0d}{factorize\+\_\+int}} (const G\+Lsizei area, const G\+Lsizei width\+\_\+limit, const G\+Lsizei height\+\_\+limit, G\+Lsizei \&width, G\+Lsizei \&height)
+\end{DoxyCompactItemize}
+\subsection*{Static Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{classSICAD_ae2d8d44b5bbcf7329e180aafda2df386}{callback\+Keypress}} (G\+L\+F\+Wwindow $\ast$window, int key, int scancode, int action, int mode)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{classSICAD_aa624c978497506de4a255c5f0301579f}{is\+\_\+initialized\+\_\+}} = false
+\item 
+bool \mbox{\hyperlink{classSICAD_a0eb57d114f3f6b50be13bd882552b2f7}{has\+\_\+proj\+\_\+matrix\+\_\+}} = false
+\item 
+const std\+::string \mbox{\hyperlink{classSICAD_a9eb34b659cac13b8442ca821455cc1f1}{log\+\_\+\+I\+D\+\_\+}} = \char`\"{}\mbox{[}SI-\/C\+AD\mbox{]}\char`\"{}
+\item 
+G\+L\+F\+Wwindow $\ast$ \mbox{\hyperlink{classSICAD_a3e55fa9ffa99ef200bfc15d6a105698a}{window\+\_\+}} = nullptr
+\item 
+G\+Lint \mbox{\hyperlink{classSICAD_a68723ee57cc9a1e02bc0dbda54a584ff}{tiles\+\_\+num\+\_\+}} = 0
+\item 
+G\+Lsizei \mbox{\hyperlink{classSICAD_ac2678cc1ad1b008912fec7e6892b23e1}{tiles\+\_\+cols\+\_\+}} = 0
+\item 
+G\+Lsizei \mbox{\hyperlink{classSICAD_aca3efa8f3fb75b3ee02474d4ec00e49e}{tiles\+\_\+rows\+\_\+}} = 0
+\item 
+G\+Lsizei \mbox{\hyperlink{classSICAD_ade37d5c3960d164acaa749745f55070f}{image\+\_\+width\+\_\+}} = 0
+\item 
+G\+Lsizei \mbox{\hyperlink{classSICAD_a093da94bc84a46d08f71051c4d88c176}{image\+\_\+height\+\_\+}} = 0
+\item 
+glm\+::mat3 \mbox{\hyperlink{classSICAD_a95af2758122e6420369516fd13fd03cc}{ogl\+\_\+to\+\_\+cam\+\_\+}} = glm\+::mat3(1.\+0f)
+\item 
+G\+Lsizei \mbox{\hyperlink{classSICAD_a08c86b826a1784b132bac3f0792fc604}{framebuffer\+\_\+width\+\_\+}} = 0
+\item 
+G\+Lsizei \mbox{\hyperlink{classSICAD_a3361bb03e52bc0554bb1e3670ef3a0f9}{framebuffer\+\_\+height\+\_\+}} = 0
+\item 
+G\+Lsizei \mbox{\hyperlink{classSICAD_acbd2113a0cc446db6f59fdedd890aad9}{render\+\_\+img\+\_\+width\+\_\+}} = 0
+\item 
+G\+Lsizei \mbox{\hyperlink{classSICAD_a29691bc258b500253364c9688f7af655}{render\+\_\+img\+\_\+height\+\_\+}} = 0
+\item 
+const G\+Lfloat \mbox{\hyperlink{classSICAD_a690437655965101bad97d32e98015dd5}{near\+\_\+}} = 0.\+001f
+\item 
+const G\+Lfloat \mbox{\hyperlink{classSICAD_a4c4d2e249ac824528e1fe9f97fa207d9}{far\+\_\+}} = 1000.\+0f
+\item 
+std\+::thread\+::id \mbox{\hyperlink{classSICAD_a6a4623d27b2ee48ad0db90bd075c708c}{main\+\_\+thread\+\_\+id\+\_\+}}
+\item 
+bool \mbox{\hyperlink{classSICAD_a8db9e37d71a14883be4879e9ea4b6a02}{show\+\_\+background\+\_\+}} = false
+\item 
+G\+Lenum \mbox{\hyperlink{classSICAD_a9c4c3ba5d071f763ee1956fa31faa3f8}{show\+\_\+mesh\+\_\+mode\+\_\+}} = G\+L\+\_\+\+F\+I\+LL
+\item 
+\mbox{\hyperlink{classSICAD_a7e092dede6f660355462d6d548214198}{M\+I\+P\+Maps}} \mbox{\hyperlink{classSICAD_a34b0de96321855145937cc5858c019b0}{mesh\+\_\+mmaps\+\_\+}} = \mbox{\hyperlink{classSICAD_a7e092dede6f660355462d6d548214198ad879c351426770bc0b13c3628db1e636}{M\+I\+P\+Maps\+::nearest}}
+\item 
+\mbox{\hyperlink{classShader}{Shader}} $\ast$ \mbox{\hyperlink{classSICAD_a46edf33acc9f7ea3bd98c7ee6388ce9c}{shader\+\_\+background\+\_\+}} = nullptr
+\item 
+\mbox{\hyperlink{classShader}{Shader}} $\ast$ \mbox{\hyperlink{classSICAD_a6c11f0e8dc8cbdd91748c230fc680833}{shader\+\_\+cad\+\_\+}} = nullptr
+\item 
+\mbox{\hyperlink{classShader}{Shader}} $\ast$ \mbox{\hyperlink{classSICAD_ac921e60623f3797253bcbcdd445b903b}{shader\+\_\+frame\+\_\+}} = nullptr
+\item 
+\mbox{\hyperlink{classSICAD_aca3c9693d298f2e8dc171194c6a7507c}{Model\+Container}} \mbox{\hyperlink{classSICAD_a05fea2b5b027a3b7f37ef9ea4ecd64f0}{model\+\_\+obj\+\_\+}}
+\item 
+G\+Luint \mbox{\hyperlink{classSICAD_a2c173ad18d42e090b46a539f92f3fe9d}{fbo\+\_\+}}
+\item 
+G\+Luint \mbox{\hyperlink{classSICAD_a50f1ec3b2545ca40d58466735da80fc6}{texture\+\_\+color\+\_\+buffer\+\_\+}}
+\item 
+G\+Luint \mbox{\hyperlink{classSICAD_a2fed5ac56bb2206fe8f6eccc9d784015}{texture\+\_\+depth\+\_\+buffer\+\_\+}}
+\item 
+G\+Luint \mbox{\hyperlink{classSICAD_a2728fb0fa0be11f0992bc81b4873da4f}{texture\+\_\+background\+\_\+}}
+\item 
+G\+Luint \mbox{\hyperlink{classSICAD_a19306fe768bae547e18a3b9366e37389}{vao\+\_\+background\+\_\+}}
+\item 
+G\+Luint \mbox{\hyperlink{classSICAD_a2cdcd11dd55a4b02b85d7c32435cc719}{ebo\+\_\+background\+\_\+}}
+\item 
+G\+Luint \mbox{\hyperlink{classSICAD_a86d6184b8c557460317a158e8d9508d1}{vbo\+\_\+background\+\_\+}}
+\item 
+G\+Luint \mbox{\hyperlink{classSICAD_ae91abeb0fe30f27e0fc40649235f3437}{vao\+\_\+frame\+\_\+}}
+\item 
+G\+Luint \mbox{\hyperlink{classSICAD_af58ffe3edf622ab96f669fcd6e210be9}{vbo\+\_\+frame\+\_\+}}
+\item 
+glm\+::mat4 \mbox{\hyperlink{classSICAD_ad5945f84df0d90113a24b2001ecbc832}{back\+\_\+proj\+\_\+}}
+\item 
+glm\+::mat4 \mbox{\hyperlink{classSICAD_afb91b682fd1f6629f163ab321869e7e0}{projection\+\_\+}}
+\end{DoxyCompactItemize}
+\subsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static int \mbox{\hyperlink{classSICAD_a16f7c3c77ddea5ba57bbcbcdd7a8d125}{class\+\_\+counter\+\_\+}} = 0
+\item 
+static G\+Lsizei \mbox{\hyperlink{classSICAD_aca24504d58ce97106dbc95925f36fca0}{renderbuffer\+\_\+size\+\_\+}} = 0
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A \mbox{\hyperlink{classSuperimpose}{Superimpose}} derived class to superimpose mesh models on top of images. 
+
+Definition at line 21 of file S\+I\+C\+A\+D.\+h.
+
+
+
+\subsection{Member Typedef Documentation}
+\mbox{\Hypertarget{classSICAD_aca3c9693d298f2e8dc171194c6a7507c}\label{classSICAD_aca3c9693d298f2e8dc171194c6a7507c}} 
+\index{S\+I\+C\+AD@{S\+I\+C\+AD}!Model\+Container@{Model\+Container}}
+\index{Model\+Container@{Model\+Container}!S\+I\+C\+AD@{S\+I\+C\+AD}}
+\subsubsection{\texorpdfstring{Model\+Container}{ModelContainer}}
+{\footnotesize\ttfamily typedef std\+::unordered\+\_\+map$<$std\+::string, \mbox{\hyperlink{classModel}{Model}}$\ast$$>$ \mbox{\hyperlink{classSICAD_aca3c9693d298f2e8dc171194c6a7507c}{S\+I\+C\+A\+D\+::\+Model\+Container}}}
+
+
+
+Definition at line 27 of file S\+I\+C\+A\+D.\+h.
+
+\mbox{\Hypertarget{classSICAD_af999665097d7cdf11780735bf24a6956}\label{classSICAD_af999665097d7cdf11780735bf24a6956}} 
+\index{S\+I\+C\+AD@{S\+I\+C\+AD}!Model\+Element@{Model\+Element}}
+\index{Model\+Element@{Model\+Element}!S\+I\+C\+AD@{S\+I\+C\+AD}}
+\subsubsection{\texorpdfstring{Model\+Element}{ModelElement}}
+{\footnotesize\ttfamily typedef std\+::pair$<$std\+::string, \mbox{\hyperlink{classModel}{Model}}$\ast$$>$ \mbox{\hyperlink{classSICAD_af999665097d7cdf11780735bf24a6956}{S\+I\+C\+A\+D\+::\+Model\+Element}}}
+
+
+
+Definition at line 28 of file S\+I\+C\+A\+D.\+h.
+
+\mbox{\Hypertarget{classSICAD_a9e1e1460d4c0f331b4fd015aae4dd721}\label{classSICAD_a9e1e1460d4c0f331b4fd015aae4dd721}} 
+\index{S\+I\+C\+AD@{S\+I\+C\+AD}!Model\+Path\+Container@{Model\+Path\+Container}}
+\index{Model\+Path\+Container@{Model\+Path\+Container}!S\+I\+C\+AD@{S\+I\+C\+AD}}
+\subsubsection{\texorpdfstring{Model\+Path\+Container}{ModelPathContainer}}
+{\footnotesize\ttfamily typedef std\+::unordered\+\_\+map$<$std\+::string, std\+::string$>$ \mbox{\hyperlink{classSICAD_a9e1e1460d4c0f331b4fd015aae4dd721}{S\+I\+C\+A\+D\+::\+Model\+Path\+Container}}}
+
+
+
+Definition at line 24 of file S\+I\+C\+A\+D.\+h.
+
+\mbox{\Hypertarget{classSICAD_a5148c8a96c82625706ce2e5b86b52dd7}\label{classSICAD_a5148c8a96c82625706ce2e5b86b52dd7}} 
+\index{S\+I\+C\+AD@{S\+I\+C\+AD}!Model\+Path\+Element@{Model\+Path\+Element}}
+\index{Model\+Path\+Element@{Model\+Path\+Element}!S\+I\+C\+AD@{S\+I\+C\+AD}}
+\subsubsection{\texorpdfstring{Model\+Path\+Element}{ModelPathElement}}
+{\footnotesize\ttfamily typedef std\+::pair$<$std\+::string, std\+::string$>$ \mbox{\hyperlink{classSICAD_a5148c8a96c82625706ce2e5b86b52dd7}{S\+I\+C\+A\+D\+::\+Model\+Path\+Element}}}
+
+
+
+Definition at line 25 of file S\+I\+C\+A\+D.\+h.
+
+\mbox{\Hypertarget{classSuperimpose_a85d40a5caf19f486d1e0c15c0a025378}\label{classSuperimpose_a85d40a5caf19f486d1e0c15c0a025378}} 
+\index{S\+I\+C\+AD@{S\+I\+C\+AD}!Model\+Pose@{Model\+Pose}}
+\index{Model\+Pose@{Model\+Pose}!S\+I\+C\+AD@{S\+I\+C\+AD}}
+\subsubsection{\texorpdfstring{Model\+Pose}{ModelPose}}
+{\footnotesize\ttfamily typedef std\+::vector$<$double$>$ \mbox{\hyperlink{classSuperimpose_a85d40a5caf19f486d1e0c15c0a025378}{Superimpose\+::\+Model\+Pose}}\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Definition at line 16 of file Superimpose.\+h.
+
+\mbox{\Hypertarget{classSuperimpose_a178e3d4e2def6635bfcf9454dd4b5d22}\label{classSuperimpose_a178e3d4e2def6635bfcf9454dd4b5d22}} 
+\index{S\+I\+C\+AD@{S\+I\+C\+AD}!Model\+Pose\+Container@{Model\+Pose\+Container}}
+\index{Model\+Pose\+Container@{Model\+Pose\+Container}!S\+I\+C\+AD@{S\+I\+C\+AD}}
+\subsubsection{\texorpdfstring{Model\+Pose\+Container}{ModelPoseContainer}}
+{\footnotesize\ttfamily typedef std\+::multimap$<$std\+::string, \mbox{\hyperlink{classSuperimpose_a85d40a5caf19f486d1e0c15c0a025378}{Model\+Pose}}$>$ \mbox{\hyperlink{classSuperimpose_a178e3d4e2def6635bfcf9454dd4b5d22}{Superimpose\+::\+Model\+Pose\+Container}}\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Definition at line 17 of file Superimpose.\+h.
+
+\mbox{\Hypertarget{classSuperimpose_a1e02e0225687b42296dcfee4eadf8a55}\label{classSuperimpose_a1e02e0225687b42296dcfee4eadf8a55}} 
+\index{S\+I\+C\+AD@{S\+I\+C\+AD}!Model\+Pose\+Container\+Element@{Model\+Pose\+Container\+Element}}
+\index{Model\+Pose\+Container\+Element@{Model\+Pose\+Container\+Element}!S\+I\+C\+AD@{S\+I\+C\+AD}}
+\subsubsection{\texorpdfstring{Model\+Pose\+Container\+Element}{ModelPoseContainerElement}}
+{\footnotesize\ttfamily typedef std\+::pair$<$std\+::string, \mbox{\hyperlink{classSuperimpose_a85d40a5caf19f486d1e0c15c0a025378}{Model\+Pose}}$>$ \mbox{\hyperlink{classSuperimpose_a1e02e0225687b42296dcfee4eadf8a55}{Superimpose\+::\+Model\+Pose\+Container\+Element}}\hspace{0.3cm}{\ttfamily [inherited]}}
+
+
+
+Definition at line 18 of file Superimpose.\+h.
+
+
+
+\subsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{classSICAD_a7e092dede6f660355462d6d548214198}\label{classSICAD_a7e092dede6f660355462d6d548214198}} 
+\index{S\+I\+C\+AD@{S\+I\+C\+AD}!M\+I\+P\+Maps@{M\+I\+P\+Maps}}
+\index{M\+I\+P\+Maps@{M\+I\+P\+Maps}!S\+I\+C\+AD@{S\+I\+C\+AD}}
+\subsubsection{\texorpdfstring{M\+I\+P\+Maps}{MIPMaps}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{classSICAD_a7e092dede6f660355462d6d548214198}{S\+I\+C\+A\+D\+::\+M\+I\+P\+Maps}}\hspace{0.3cm}{\ttfamily [strong]}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{nearest@{nearest}!S\+I\+C\+AD@{S\+I\+C\+AD}}\index{S\+I\+C\+AD@{S\+I\+C\+AD}!nearest@{nearest}}}\mbox{\Hypertarget{classSICAD_a7e092dede6f660355462d6d548214198ad879c351426770bc0b13c3628db1e636}\label{classSICAD_a7e092dede6f660355462d6d548214198ad879c351426770bc0b13c3628db1e636}} 
+nearest&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{linear@{linear}!S\+I\+C\+AD@{S\+I\+C\+AD}}\index{S\+I\+C\+AD@{S\+I\+C\+AD}!linear@{linear}}}\mbox{\Hypertarget{classSICAD_a7e092dede6f660355462d6d548214198a9a932b3cb396238423eb2f33ec17d6aa}\label{classSICAD_a7e092dede6f660355462d6d548214198a9a932b3cb396238423eb2f33ec17d6aa}} 
+linear&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line 30 of file S\+I\+C\+A\+D.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classSICAD_a6fe9d4a644f468438264842896684a2c}\label{classSICAD_a6fe9d4a644f468438264842896684a2c}} 
+\index{S\+I\+C\+AD@{S\+I\+C\+AD}!S\+I\+C\+AD@{S\+I\+C\+AD}}
+\index{S\+I\+C\+AD@{S\+I\+C\+AD}!S\+I\+C\+AD@{S\+I\+C\+AD}}
+\subsubsection{\texorpdfstring{S\+I\+C\+A\+D()}{SICAD()}\hspace{0.1cm}{\footnotesize\ttfamily [1/9]}}
+{\footnotesize\ttfamily S\+I\+C\+A\+D\+::\+S\+I\+C\+AD (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 20 of file S\+I\+C\+A\+D.\+cpp.
+
+\mbox{\Hypertarget{classSICAD_af6f17b4221b2d2725de7663c1a990175}\label{classSICAD_af6f17b4221b2d2725de7663c1a990175}} 
+\index{S\+I\+C\+AD@{S\+I\+C\+AD}!S\+I\+C\+AD@{S\+I\+C\+AD}}
+\index{S\+I\+C\+AD@{S\+I\+C\+AD}!S\+I\+C\+AD@{S\+I\+C\+AD}}
+\subsubsection{\texorpdfstring{S\+I\+C\+A\+D()}{SICAD()}\hspace{0.1cm}{\footnotesize\ttfamily [2/9]}}
+{\footnotesize\ttfamily S\+I\+C\+A\+D\+::\+S\+I\+C\+AD (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classSICAD_a9e1e1460d4c0f331b4fd015aae4dd721}{Model\+Path\+Container}} \&}]{objfile\+\_\+map,  }\item[{const bool}]{window\+\_\+visible }\end{DoxyParamCaption})}
+
+
+
+Definition at line 23 of file S\+I\+C\+A\+D.\+cpp.
+
+\mbox{\Hypertarget{classSICAD_aa3cd941a7aa5f6620c6591c3b21a081c}\label{classSICAD_aa3cd941a7aa5f6620c6591c3b21a081c}} 
+\index{S\+I\+C\+AD@{S\+I\+C\+AD}!S\+I\+C\+AD@{S\+I\+C\+AD}}
+\index{S\+I\+C\+AD@{S\+I\+C\+AD}!S\+I\+C\+AD@{S\+I\+C\+AD}}
+\subsubsection{\texorpdfstring{S\+I\+C\+A\+D()}{SICAD()}\hspace{0.1cm}{\footnotesize\ttfamily [3/9]}}
+{\footnotesize\ttfamily S\+I\+C\+A\+D\+::\+S\+I\+C\+AD (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classSICAD_a9e1e1460d4c0f331b4fd015aae4dd721}{Model\+Path\+Container}} \&}]{objfile\+\_\+map,  }\item[{const std\+::string \&}]{shader\+\_\+folder,  }\item[{const bool}]{window\+\_\+visible }\end{DoxyParamCaption})}
+
+
+
+Definition at line 33 of file S\+I\+C\+A\+D.\+cpp.
+
+\mbox{\Hypertarget{classSICAD_a2f0ac6e07e5b0cf7e8a99205bf4bc447}\label{classSICAD_a2f0ac6e07e5b0cf7e8a99205bf4bc447}} 
+\index{S\+I\+C\+AD@{S\+I\+C\+AD}!S\+I\+C\+AD@{S\+I\+C\+AD}}
+\index{S\+I\+C\+AD@{S\+I\+C\+AD}!S\+I\+C\+AD@{S\+I\+C\+AD}}
+\subsubsection{\texorpdfstring{S\+I\+C\+A\+D()}{SICAD()}\hspace{0.1cm}{\footnotesize\ttfamily [4/9]}}
+{\footnotesize\ttfamily S\+I\+C\+A\+D\+::\+S\+I\+C\+AD (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classSICAD_a9e1e1460d4c0f331b4fd015aae4dd721}{Model\+Path\+Container}} \&}]{objfile\+\_\+map,  }\item[{const G\+Lsizei}]{cam\+\_\+width,  }\item[{const G\+Lsizei}]{cam\+\_\+height,  }\item[{const std\+::string \&}]{shader\+\_\+folder,  }\item[{const bool}]{window\+\_\+visible }\end{DoxyParamCaption})}
+
+
+
+Definition at line 44 of file S\+I\+C\+A\+D.\+cpp.
+
+\mbox{\Hypertarget{classSICAD_abebce8e8feb344ad23caed3e2a8b732a}\label{classSICAD_abebce8e8feb344ad23caed3e2a8b732a}} 
+\index{S\+I\+C\+AD@{S\+I\+C\+AD}!S\+I\+C\+AD@{S\+I\+C\+AD}}
+\index{S\+I\+C\+AD@{S\+I\+C\+AD}!S\+I\+C\+AD@{S\+I\+C\+AD}}
+\subsubsection{\texorpdfstring{S\+I\+C\+A\+D()}{SICAD()}\hspace{0.1cm}{\footnotesize\ttfamily [5/9]}}
+{\footnotesize\ttfamily S\+I\+C\+A\+D\+::\+S\+I\+C\+AD (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classSICAD_a9e1e1460d4c0f331b4fd015aae4dd721}{Model\+Path\+Container}} \&}]{objfile\+\_\+map,  }\item[{const G\+Lsizei}]{cam\+\_\+width,  }\item[{const G\+Lsizei}]{cam\+\_\+height,  }\item[{const G\+Lint}]{num\+\_\+images,  }\item[{const std\+::string \&}]{shader\+\_\+folder,  }\item[{const bool}]{window\+\_\+visible }\end{DoxyParamCaption})}
+
+
+
+Definition at line 56 of file S\+I\+C\+A\+D.\+cpp.
+
+\mbox{\Hypertarget{classSICAD_abcb9bb154f73472447affb9bb16dcec7}\label{classSICAD_abcb9bb154f73472447affb9bb16dcec7}} 
+\index{S\+I\+C\+AD@{S\+I\+C\+AD}!S\+I\+C\+AD@{S\+I\+C\+AD}}
+\index{S\+I\+C\+AD@{S\+I\+C\+AD}!S\+I\+C\+AD@{S\+I\+C\+AD}}
+\subsubsection{\texorpdfstring{S\+I\+C\+A\+D()}{SICAD()}\hspace{0.1cm}{\footnotesize\ttfamily [6/9]}}
+{\footnotesize\ttfamily S\+I\+C\+A\+D\+::\+S\+I\+C\+AD (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classSICAD_a9e1e1460d4c0f331b4fd015aae4dd721}{Model\+Path\+Container}} \&}]{objfile\+\_\+map,  }\item[{const G\+Lsizei}]{cam\+\_\+width,  }\item[{const G\+Lsizei}]{cam\+\_\+height,  }\item[{const G\+Lint}]{num\+\_\+images,  }\item[{const std\+::vector$<$ float $>$ \&}]{ogl\+\_\+to\+\_\+cam,  }\item[{const std\+::string \&}]{shader\+\_\+folder,  }\item[{const bool}]{window\+\_\+visible }\end{DoxyParamCaption})}
+
+
+
+Definition at line 69 of file S\+I\+C\+A\+D.\+cpp.
+
+
+
+References init\+S\+I\+C\+A\+D().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classSICAD_abcb9bb154f73472447affb9bb16dcec7_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classSICAD_a6ddc65ccbfea740515782c4b0dc25a0c}\label{classSICAD_a6ddc65ccbfea740515782c4b0dc25a0c}} 
+\index{S\+I\+C\+AD@{S\+I\+C\+AD}!S\+I\+C\+AD@{S\+I\+C\+AD}}
+\index{S\+I\+C\+AD@{S\+I\+C\+AD}!S\+I\+C\+AD@{S\+I\+C\+AD}}
+\subsubsection{\texorpdfstring{S\+I\+C\+A\+D()}{SICAD()}\hspace{0.1cm}{\footnotesize\ttfamily [7/9]}}
+{\footnotesize\ttfamily S\+I\+C\+A\+D\+::\+S\+I\+C\+AD (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classSICAD_a9e1e1460d4c0f331b4fd015aae4dd721}{Model\+Path\+Container}} \&}]{objfile\+\_\+map,  }\item[{const G\+Lsizei}]{cam\+\_\+width,  }\item[{const G\+Lsizei}]{cam\+\_\+height,  }\item[{const G\+Lfloat}]{cam\+\_\+fx,  }\item[{const G\+Lfloat}]{cam\+\_\+fy,  }\item[{const G\+Lfloat}]{cam\+\_\+cx,  }\item[{const G\+Lfloat}]{cam\+\_\+cy,  }\item[{const std\+::string \&}]{shader\+\_\+folder,  }\item[{const bool}]{window\+\_\+visible }\end{DoxyParamCaption})}
+
+
+
+Definition at line 85 of file S\+I\+C\+A\+D.\+cpp.
+
+\mbox{\Hypertarget{classSICAD_a1d217cbdc1670f8c5885c413e4acbede}\label{classSICAD_a1d217cbdc1670f8c5885c413e4acbede}} 
+\index{S\+I\+C\+AD@{S\+I\+C\+AD}!S\+I\+C\+AD@{S\+I\+C\+AD}}
+\index{S\+I\+C\+AD@{S\+I\+C\+AD}!S\+I\+C\+AD@{S\+I\+C\+AD}}
+\subsubsection{\texorpdfstring{S\+I\+C\+A\+D()}{SICAD()}\hspace{0.1cm}{\footnotesize\ttfamily [8/9]}}
+{\footnotesize\ttfamily S\+I\+C\+A\+D\+::\+S\+I\+C\+AD (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classSICAD_a9e1e1460d4c0f331b4fd015aae4dd721}{Model\+Path\+Container}} \&}]{objfile\+\_\+map,  }\item[{const G\+Lsizei}]{cam\+\_\+width,  }\item[{const G\+Lsizei}]{cam\+\_\+height,  }\item[{const G\+Lfloat}]{cam\+\_\+fx,  }\item[{const G\+Lfloat}]{cam\+\_\+fy,  }\item[{const G\+Lfloat}]{cam\+\_\+cx,  }\item[{const G\+Lfloat}]{cam\+\_\+cy,  }\item[{const G\+Lint}]{num\+\_\+images,  }\item[{const std\+::string \&}]{shader\+\_\+folder,  }\item[{const bool}]{window\+\_\+visible }\end{DoxyParamCaption})}
+
+
+
+Definition at line 102 of file S\+I\+C\+A\+D.\+cpp.
+
+\mbox{\Hypertarget{classSICAD_ac4e6349b361e3ec41d828e0d0f77f12b}\label{classSICAD_ac4e6349b361e3ec41d828e0d0f77f12b}} 
+\index{S\+I\+C\+AD@{S\+I\+C\+AD}!S\+I\+C\+AD@{S\+I\+C\+AD}}
+\index{S\+I\+C\+AD@{S\+I\+C\+AD}!S\+I\+C\+AD@{S\+I\+C\+AD}}
+\subsubsection{\texorpdfstring{S\+I\+C\+A\+D()}{SICAD()}\hspace{0.1cm}{\footnotesize\ttfamily [9/9]}}
+{\footnotesize\ttfamily S\+I\+C\+A\+D\+::\+S\+I\+C\+AD (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classSICAD_a9e1e1460d4c0f331b4fd015aae4dd721}{Model\+Path\+Container}} \&}]{objfile\+\_\+map,  }\item[{const G\+Lsizei}]{cam\+\_\+width,  }\item[{const G\+Lsizei}]{cam\+\_\+height,  }\item[{const G\+Lfloat}]{cam\+\_\+fx,  }\item[{const G\+Lfloat}]{cam\+\_\+fy,  }\item[{const G\+Lfloat}]{cam\+\_\+cx,  }\item[{const G\+Lfloat}]{cam\+\_\+cy,  }\item[{const G\+Lint}]{num\+\_\+images,  }\item[{const std\+::vector$<$ float $>$ \&}]{ogl\+\_\+to\+\_\+cam,  }\item[{const std\+::string \&}]{shader\+\_\+folder,  }\item[{const bool}]{window\+\_\+visible }\end{DoxyParamCaption})}
+
+
+
+Create a \mbox{\hyperlink{classSICAD}{S\+I\+C\+AD}} object with a dedicated Open\+GL window and context. 
+
+For the \mbox{\hyperlink{classSICAD}{S\+I\+C\+AD}} object to work properly, four shaders are needed. Further, their name must be as follows\+:
+
+
+\begin{DoxyItemize}
+\item shader\+\_\+model.\+vert for the model vertex shader
+\item shader\+\_\+model.\+frag for the model fragment shader
+\item shader\+\_\+background.\+vert for the background vertex shader
+\item shader\+\_\+background.\+frag for the background fragment shader
+\end{DoxyItemize}
+
+
+\begin{DoxyParams}{Parameters}
+{\em objfile\+\_\+map} & a (tag, path) container to associate a \textquotesingle{}tag\textquotesingle{} to the mesh file specified in \textquotesingle{}path\textquotesingle{}. \\
+\hline
+{\em cam\+\_\+width} & camera or image width. \\
+\hline
+{\em cam\+\_\+height} & camera or image height. \\
+\hline
+{\em cam\+\_\+fx} & focal length along the x axis in pixels. \\
+\hline
+{\em cam\+\_\+fy} & focal length along the y axis in pixels. \\
+\hline
+{\em num\+\_\+images} & number of images to render (using gl\+Scissor) in the same window and context. \\
+\hline
+{\em ogl\+\_\+to\+\_\+cam} & a 7 component pose vector, (x, y, z) position and a (ux, uy, uz, theta) axis-\/angle orientation, defining a camera rotation to be applied to the Open\+GL camera. \\
+\hline
+{\em shader\+\_\+folder} & folder path containing four shaders, two for the background and two for the mesh. \\
+\hline
+{\em window\+\_\+visible} & true to show the rendering window, false to perform off-\/screen rendering. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 120 of file S\+I\+C\+A\+D.\+cpp.
+
+
+
+References log\+\_\+\+I\+D\+\_\+, and set\+Projection\+Matrix().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classSICAD_ac4e6349b361e3ec41d828e0d0f77f12b_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classSICAD_a4e3d6d1f90ea2261dcd8507ee8709360}\label{classSICAD_a4e3d6d1f90ea2261dcd8507ee8709360}} 
+\index{S\+I\+C\+AD@{S\+I\+C\+AD}!````~S\+I\+C\+AD@{$\sim$\+S\+I\+C\+AD}}
+\index{````~S\+I\+C\+AD@{$\sim$\+S\+I\+C\+AD}!S\+I\+C\+AD@{S\+I\+C\+AD}}
+\subsubsection{\texorpdfstring{$\sim$\+S\+I\+C\+A\+D()}{~SICAD()}}
+{\footnotesize\ttfamily S\+I\+C\+A\+D\+::$\sim$\+S\+I\+C\+AD (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Definition at line 140 of file S\+I\+C\+A\+D.\+cpp.
+
+
+
+References class\+\_\+counter\+\_\+, ebo\+\_\+background\+\_\+, fbo\+\_\+, log\+\_\+\+I\+D\+\_\+, model\+\_\+obj\+\_\+, shader\+\_\+background\+\_\+, shader\+\_\+cad\+\_\+, texture\+\_\+background\+\_\+, texture\+\_\+color\+\_\+buffer\+\_\+, texture\+\_\+depth\+\_\+buffer\+\_\+, vao\+\_\+background\+\_\+, vao\+\_\+frame\+\_\+, vbo\+\_\+background\+\_\+, vbo\+\_\+frame\+\_\+, and window\+\_\+.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classSICAD_ae2d8d44b5bbcf7329e180aafda2df386}\label{classSICAD_ae2d8d44b5bbcf7329e180aafda2df386}} 
+\index{S\+I\+C\+AD@{S\+I\+C\+AD}!callback\+Keypress@{callback\+Keypress}}
+\index{callback\+Keypress@{callback\+Keypress}!S\+I\+C\+AD@{S\+I\+C\+AD}}
+\subsubsection{\texorpdfstring{callback\+Keypress()}{callbackKeypress()}}
+{\footnotesize\ttfamily static void S\+I\+C\+A\+D\+::callback\+Keypress (\begin{DoxyParamCaption}\item[{G\+L\+F\+Wwindow $\ast$}]{window,  }\item[{int}]{key,  }\item[{int}]{scancode,  }\item[{int}]{action,  }\item[{int}]{mode }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+\mbox{\Hypertarget{classSICAD_a2603ec5cb9a31bc7be0a335ef513ab0d}\label{classSICAD_a2603ec5cb9a31bc7be0a335ef513ab0d}} 
+\index{S\+I\+C\+AD@{S\+I\+C\+AD}!factorize\+\_\+int@{factorize\+\_\+int}}
+\index{factorize\+\_\+int@{factorize\+\_\+int}!S\+I\+C\+AD@{S\+I\+C\+AD}}
+\subsubsection{\texorpdfstring{factorize\+\_\+int()}{factorize\_int()}}
+{\footnotesize\ttfamily void S\+I\+C\+A\+D\+::factorize\+\_\+int (\begin{DoxyParamCaption}\item[{const G\+Lsizei}]{area,  }\item[{const G\+Lsizei}]{width\+\_\+limit,  }\item[{const G\+Lsizei}]{height\+\_\+limit,  }\item[{G\+Lsizei \&}]{width,  }\item[{G\+Lsizei \&}]{height }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 942 of file S\+I\+C\+A\+D.\+cpp.
+
+
+
+Referenced by init\+O\+G\+L().
+
+\mbox{\Hypertarget{classSICAD_a170bd325654aed9eb81062ac610608fa}\label{classSICAD_a170bd325654aed9eb81062ac610608fa}} 
+\index{S\+I\+C\+AD@{S\+I\+C\+AD}!get\+Background\+Opt@{get\+Background\+Opt}}
+\index{get\+Background\+Opt@{get\+Background\+Opt}!S\+I\+C\+AD@{S\+I\+C\+AD}}
+\subsubsection{\texorpdfstring{get\+Background\+Opt()}{getBackgroundOpt()}}
+{\footnotesize\ttfamily bool S\+I\+C\+A\+D\+::get\+Background\+Opt (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Definition at line 834 of file S\+I\+C\+A\+D.\+cpp.
+
+
+
+References show\+\_\+background\+\_\+.
+
+
+
+Referenced by superimpose().
+
+\mbox{\Hypertarget{classSICAD_a8033a99745f595ea5205e3830cabc389}\label{classSICAD_a8033a99745f595ea5205e3830cabc389}} 
+\index{S\+I\+C\+AD@{S\+I\+C\+AD}!get\+Mipmaps\+Opt@{get\+Mipmaps\+Opt}}
+\index{get\+Mipmaps\+Opt@{get\+Mipmaps\+Opt}!S\+I\+C\+AD@{S\+I\+C\+AD}}
+\subsubsection{\texorpdfstring{get\+Mipmaps\+Opt()}{getMipmapsOpt()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classSICAD_a7e092dede6f660355462d6d548214198}{S\+I\+C\+A\+D\+::\+M\+I\+P\+Maps}} S\+I\+C\+A\+D\+::get\+Mipmaps\+Opt (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Definition at line 853 of file S\+I\+C\+A\+D.\+cpp.
+
+
+
+References mesh\+\_\+mmaps\+\_\+.
+
+
+
+Referenced by set\+Background().
+
+\mbox{\Hypertarget{classSICAD_aaf003ab2ac8bc5ebdef6611ca1547e73}\label{classSICAD_aaf003ab2ac8bc5ebdef6611ca1547e73}} 
+\index{S\+I\+C\+AD@{S\+I\+C\+AD}!get\+Ogl\+Window\+Should\+Close@{get\+Ogl\+Window\+Should\+Close}}
+\index{get\+Ogl\+Window\+Should\+Close@{get\+Ogl\+Window\+Should\+Close}!S\+I\+C\+AD@{S\+I\+C\+AD}}
+\subsubsection{\texorpdfstring{get\+Ogl\+Window\+Should\+Close()}{getOglWindowShouldClose()}}
+{\footnotesize\ttfamily bool S\+I\+C\+A\+D\+::get\+Ogl\+Window\+Should\+Close (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 500 of file S\+I\+C\+A\+D.\+cpp.
+
+
+
+References is\+\_\+initialized\+\_\+, and window\+\_\+.
+
+\mbox{\Hypertarget{classSICAD_a2ba3a0aeb3dab9996bdeed19a16eae56}\label{classSICAD_a2ba3a0aeb3dab9996bdeed19a16eae56}} 
+\index{S\+I\+C\+AD@{S\+I\+C\+AD}!get\+Tiles\+Cols@{get\+Tiles\+Cols}}
+\index{get\+Tiles\+Cols@{get\+Tiles\+Cols}!S\+I\+C\+AD@{S\+I\+C\+AD}}
+\subsubsection{\texorpdfstring{get\+Tiles\+Cols()}{getTilesCols()}}
+{\footnotesize\ttfamily int S\+I\+C\+A\+D\+::get\+Tiles\+Cols (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Definition at line 871 of file S\+I\+C\+A\+D.\+cpp.
+
+
+
+References tiles\+\_\+cols\+\_\+.
+
+\mbox{\Hypertarget{classSICAD_a728f82ebbfeea54f3fef2fc0c56a4964}\label{classSICAD_a728f82ebbfeea54f3fef2fc0c56a4964}} 
+\index{S\+I\+C\+AD@{S\+I\+C\+AD}!get\+Tiles\+Number@{get\+Tiles\+Number}}
+\index{get\+Tiles\+Number@{get\+Tiles\+Number}!S\+I\+C\+AD@{S\+I\+C\+AD}}
+\subsubsection{\texorpdfstring{get\+Tiles\+Number()}{getTilesNumber()}}
+{\footnotesize\ttfamily int S\+I\+C\+A\+D\+::get\+Tiles\+Number (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Definition at line 859 of file S\+I\+C\+A\+D.\+cpp.
+
+
+
+References tiles\+\_\+cols\+\_\+, and tiles\+\_\+rows\+\_\+.
+
+\mbox{\Hypertarget{classSICAD_a9e3dd48dfd83ea0bd00d64dacc4fbd40}\label{classSICAD_a9e3dd48dfd83ea0bd00d64dacc4fbd40}} 
+\index{S\+I\+C\+AD@{S\+I\+C\+AD}!get\+Tiles\+Rows@{get\+Tiles\+Rows}}
+\index{get\+Tiles\+Rows@{get\+Tiles\+Rows}!S\+I\+C\+AD@{S\+I\+C\+AD}}
+\subsubsection{\texorpdfstring{get\+Tiles\+Rows()}{getTilesRows()}}
+{\footnotesize\ttfamily int S\+I\+C\+A\+D\+::get\+Tiles\+Rows (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Definition at line 865 of file S\+I\+C\+A\+D.\+cpp.
+
+
+
+References tiles\+\_\+rows\+\_\+.
+
+\mbox{\Hypertarget{classSICAD_a1bdece095865249df4cb4e6a7ad2901e}\label{classSICAD_a1bdece095865249df4cb4e6a7ad2901e}} 
+\index{S\+I\+C\+AD@{S\+I\+C\+AD}!get\+View\+Transformation\+Matrix@{get\+View\+Transformation\+Matrix}}
+\index{get\+View\+Transformation\+Matrix@{get\+View\+Transformation\+Matrix}!S\+I\+C\+AD@{S\+I\+C\+AD}}
+\subsubsection{\texorpdfstring{get\+View\+Transformation\+Matrix()}{getViewTransformationMatrix()}}
+{\footnotesize\ttfamily glm\+::mat4 S\+I\+C\+A\+D\+::get\+View\+Transformation\+Matrix (\begin{DoxyParamCaption}\item[{const double $\ast$}]{cam\+\_\+x,  }\item[{const double $\ast$}]{cam\+\_\+o }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 877 of file S\+I\+C\+A\+D.\+cpp.
+
+
+
+References ogl\+\_\+to\+\_\+cam\+\_\+.
+
+
+
+Referenced by superimpose().
+
+\mbox{\Hypertarget{classSICAD_af65b5ad73e2c0e872face157b56bd68b}\label{classSICAD_af65b5ad73e2c0e872face157b56bd68b}} 
+\index{S\+I\+C\+AD@{S\+I\+C\+AD}!get\+Wireframe\+Opt@{get\+Wireframe\+Opt}}
+\index{get\+Wireframe\+Opt@{get\+Wireframe\+Opt}!S\+I\+C\+AD@{S\+I\+C\+AD}}
+\subsubsection{\texorpdfstring{get\+Wireframe\+Opt()}{getWireframeOpt()}}
+{\footnotesize\ttfamily G\+Lenum S\+I\+C\+A\+D\+::get\+Wireframe\+Opt (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Definition at line 847 of file S\+I\+C\+A\+D.\+cpp.
+
+
+
+References show\+\_\+mesh\+\_\+mode\+\_\+.
+
+
+
+Referenced by superimpose().
+
+\mbox{\Hypertarget{classSICAD_a102619690ab32e300405d22d52e36a5e}\label{classSICAD_a102619690ab32e300405d22d52e36a5e}} 
+\index{S\+I\+C\+AD@{S\+I\+C\+AD}!init\+O\+GL@{init\+O\+GL}}
+\index{init\+O\+GL@{init\+O\+GL}!S\+I\+C\+AD@{S\+I\+C\+AD}}
+\subsubsection{\texorpdfstring{init\+O\+G\+L()}{initOGL()}}
+{\footnotesize\ttfamily bool S\+I\+C\+A\+D\+::init\+O\+GL (\begin{DoxyParamCaption}\item[{const G\+Lsizei}]{width,  }\item[{const G\+Lsizei}]{height,  }\item[{const G\+Lint}]{num\+\_\+viewports,  }\item[{const bool}]{window\+\_\+visibile }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 413 of file S\+I\+C\+A\+D.\+cpp.
+
+
+
+References factorize\+\_\+int(), framebuffer\+\_\+height\+\_\+, framebuffer\+\_\+width\+\_\+, image\+\_\+height\+\_\+, image\+\_\+width\+\_\+, log\+\_\+\+I\+D\+\_\+, main\+\_\+thread\+\_\+id\+\_\+, render\+\_\+img\+\_\+height\+\_\+, render\+\_\+img\+\_\+width\+\_\+, renderbuffer\+\_\+size\+\_\+, tiles\+\_\+cols\+\_\+, tiles\+\_\+num\+\_\+, tiles\+\_\+rows\+\_\+, and window\+\_\+.
+
+
+
+Referenced by init\+S\+I\+C\+A\+D().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=305pt]{classSICAD_a102619690ab32e300405d22d52e36a5e_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classSICAD_a04e1291dc1a51b2dee87dbe9a5b3a316}\label{classSICAD_a04e1291dc1a51b2dee87dbe9a5b3a316}} 
+\index{S\+I\+C\+AD@{S\+I\+C\+AD}!init\+S\+I\+C\+AD@{init\+S\+I\+C\+AD}}
+\index{init\+S\+I\+C\+AD@{init\+S\+I\+C\+AD}!S\+I\+C\+AD@{S\+I\+C\+AD}}
+\subsubsection{\texorpdfstring{init\+S\+I\+C\+A\+D()}{initSICAD()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool S\+I\+C\+A\+D\+::init\+S\+I\+C\+AD (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classSICAD_a9e1e1460d4c0f331b4fd015aae4dd721}{Model\+Path\+Container}} \&}]{objfile\+\_\+map,  }\item[{const G\+Lsizei}]{cam\+\_\+width,  }\item[{const G\+Lsizei}]{cam\+\_\+height,  }\item[{const G\+Lint}]{num\+\_\+images,  }\item[{const std\+::vector$<$ float $>$ \&}]{ogl\+\_\+to\+\_\+cam,  }\item[{const std\+::string \&}]{shader\+\_\+folder,  }\item[{const bool}]{window\+\_\+visible }\end{DoxyParamCaption})}
+
+
+
+Definition at line 181 of file S\+I\+C\+A\+D.\+cpp.
+
+
+
+References back\+\_\+proj\+\_\+, class\+\_\+counter\+\_\+, ebo\+\_\+background\+\_\+, far\+\_\+, fbo\+\_\+, framebuffer\+\_\+height\+\_\+, framebuffer\+\_\+width\+\_\+, init\+O\+G\+L(), is\+\_\+initialized\+\_\+, log\+\_\+\+I\+D\+\_\+, model\+\_\+obj\+\_\+, ogl\+\_\+to\+\_\+cam\+\_\+, shader\+\_\+background\+\_\+, shader\+\_\+cad\+\_\+, shader\+\_\+frame\+\_\+, texture\+\_\+background\+\_\+, texture\+\_\+color\+\_\+buffer\+\_\+, texture\+\_\+depth\+\_\+buffer\+\_\+, vao\+\_\+background\+\_\+, vao\+\_\+frame\+\_\+, vbo\+\_\+background\+\_\+, vbo\+\_\+frame\+\_\+, and window\+\_\+.
+
+
+
+Referenced by init\+S\+I\+C\+A\+D(), and S\+I\+C\+A\+D().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classSICAD_a04e1291dc1a51b2dee87dbe9a5b3a316_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classSICAD_abb2b0250a885435828d5255645e06ac8}\label{classSICAD_abb2b0250a885435828d5255645e06ac8}} 
+\index{S\+I\+C\+AD@{S\+I\+C\+AD}!init\+S\+I\+C\+AD@{init\+S\+I\+C\+AD}}
+\index{init\+S\+I\+C\+AD@{init\+S\+I\+C\+AD}!S\+I\+C\+AD@{S\+I\+C\+AD}}
+\subsubsection{\texorpdfstring{init\+S\+I\+C\+A\+D()}{initSICAD()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool S\+I\+C\+A\+D\+::init\+S\+I\+C\+AD (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classSICAD_a9e1e1460d4c0f331b4fd015aae4dd721}{Model\+Path\+Container}} \&}]{objfile\+\_\+map,  }\item[{const G\+Lsizei}]{cam\+\_\+width,  }\item[{const G\+Lsizei}]{cam\+\_\+height,  }\item[{const G\+Lfloat}]{cam\+\_\+fx,  }\item[{const G\+Lfloat}]{cam\+\_\+fy,  }\item[{const G\+Lfloat}]{cam\+\_\+cx,  }\item[{const G\+Lfloat}]{cam\+\_\+cy,  }\item[{const G\+Lint}]{num\+\_\+images,  }\item[{const std\+::vector$<$ float $>$ \&}]{ogl\+\_\+to\+\_\+cam,  }\item[{const std\+::string \&}]{shader\+\_\+folder,  }\item[{const bool}]{window\+\_\+visible }\end{DoxyParamCaption})}
+
+
+
+Definition at line 389 of file S\+I\+C\+A\+D.\+cpp.
+
+
+
+References init\+S\+I\+C\+A\+D(), log\+\_\+\+I\+D\+\_\+, and set\+Projection\+Matrix().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classSICAD_abb2b0250a885435828d5255645e06ac8_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classSICAD_a8238a2b2c488c8b7ba85d5b2a0bf00ac}\label{classSICAD_a8238a2b2c488c8b7ba85d5b2a0bf00ac}} 
+\index{S\+I\+C\+AD@{S\+I\+C\+AD}!poll\+Or\+Post\+Event@{poll\+Or\+Post\+Event}}
+\index{poll\+Or\+Post\+Event@{poll\+Or\+Post\+Event}!S\+I\+C\+AD@{S\+I\+C\+AD}}
+\subsubsection{\texorpdfstring{poll\+Or\+Post\+Event()}{pollOrPostEvent()}}
+{\footnotesize\ttfamily void S\+I\+C\+A\+D\+::poll\+Or\+Post\+Event (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 892 of file S\+I\+C\+A\+D.\+cpp.
+
+
+
+References main\+\_\+thread\+\_\+id\+\_\+.
+
+
+
+Referenced by set\+Ogl\+Window\+Should\+Close(), and superimpose().
+
+\mbox{\Hypertarget{classSICAD_a25b180f54f2e93d69b291cc225600c8e}\label{classSICAD_a25b180f54f2e93d69b291cc225600c8e}} 
+\index{S\+I\+C\+AD@{S\+I\+C\+AD}!set\+Background@{set\+Background}}
+\index{set\+Background@{set\+Background}!S\+I\+C\+AD@{S\+I\+C\+AD}}
+\subsubsection{\texorpdfstring{set\+Background()}{setBackground()}}
+{\footnotesize\ttfamily void S\+I\+C\+A\+D\+::set\+Background (\begin{DoxyParamCaption}\item[{cv\+::\+Mat \&}]{img }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 901 of file S\+I\+C\+A\+D.\+cpp.
+
+
+
+References back\+\_\+proj\+\_\+, get\+Mipmaps\+Opt(), Shader\+::install(), linear, nearest, Shader\+::\+Program, shader\+\_\+background\+\_\+, texture\+\_\+background\+\_\+, Shader\+::uninstall(), and vao\+\_\+background\+\_\+.
+
+
+
+Referenced by superimpose().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classSICAD_a25b180f54f2e93d69b291cc225600c8e_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classSICAD_a07921943ad3d4016dcbe76135e799754}\label{classSICAD_a07921943ad3d4016dcbe76135e799754}} 
+\index{S\+I\+C\+AD@{S\+I\+C\+AD}!set\+Background\+Opt@{set\+Background\+Opt}}
+\index{set\+Background\+Opt@{set\+Background\+Opt}!S\+I\+C\+AD@{S\+I\+C\+AD}}
+\subsubsection{\texorpdfstring{set\+Background\+Opt()}{setBackgroundOpt()}}
+{\footnotesize\ttfamily void S\+I\+C\+A\+D\+::set\+Background\+Opt (\begin{DoxyParamCaption}\item[{bool}]{show\+\_\+background }\end{DoxyParamCaption})}
+
+
+
+Definition at line 828 of file S\+I\+C\+A\+D.\+cpp.
+
+
+
+References show\+\_\+background\+\_\+.
+
+
+
+Referenced by main().
+
+\mbox{\Hypertarget{classSICAD_a0e42acab32252ddc878794f365ee1037}\label{classSICAD_a0e42acab32252ddc878794f365ee1037}} 
+\index{S\+I\+C\+AD@{S\+I\+C\+AD}!set\+Ogl\+Window\+Should\+Close@{set\+Ogl\+Window\+Should\+Close}}
+\index{set\+Ogl\+Window\+Should\+Close@{set\+Ogl\+Window\+Should\+Close}!S\+I\+C\+AD@{S\+I\+C\+AD}}
+\subsubsection{\texorpdfstring{set\+Ogl\+Window\+Should\+Close()}{setOglWindowShouldClose()}}
+{\footnotesize\ttfamily void S\+I\+C\+A\+D\+::set\+Ogl\+Window\+Should\+Close (\begin{DoxyParamCaption}\item[{bool}]{should\+\_\+close }\end{DoxyParamCaption})}
+
+
+
+Definition at line 512 of file S\+I\+C\+A\+D.\+cpp.
+
+
+
+References is\+\_\+initialized\+\_\+, poll\+Or\+Post\+Event(), and window\+\_\+.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classSICAD_a0e42acab32252ddc878794f365ee1037_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classSICAD_a39cdff6871d32429d8ba95b776e0b874}\label{classSICAD_a39cdff6871d32429d8ba95b776e0b874}} 
+\index{S\+I\+C\+AD@{S\+I\+C\+AD}!set\+Projection\+Matrix@{set\+Projection\+Matrix}}
+\index{set\+Projection\+Matrix@{set\+Projection\+Matrix}!S\+I\+C\+AD@{S\+I\+C\+AD}}
+\subsubsection{\texorpdfstring{set\+Projection\+Matrix()}{setProjectionMatrix()}}
+{\footnotesize\ttfamily bool S\+I\+C\+A\+D\+::set\+Projection\+Matrix (\begin{DoxyParamCaption}\item[{const G\+Lsizei}]{cam\+\_\+width,  }\item[{const G\+Lsizei}]{cam\+\_\+height,  }\item[{const G\+Lfloat}]{cam\+\_\+fx,  }\item[{const G\+Lfloat}]{cam\+\_\+fy,  }\item[{const G\+Lfloat}]{cam\+\_\+cx,  }\item[{const G\+Lfloat}]{cam\+\_\+cy }\end{DoxyParamCaption})}
+
+
+
+Definition at line 774 of file S\+I\+C\+A\+D.\+cpp.
+
+
+
+References far\+\_\+, has\+\_\+proj\+\_\+matrix\+\_\+, Shader\+::install(), is\+\_\+initialized\+\_\+, near\+\_\+, Shader\+::\+Program, projection\+\_\+, shader\+\_\+cad\+\_\+, shader\+\_\+frame\+\_\+, Shader\+::uninstall(), and window\+\_\+.
+
+
+
+Referenced by init\+S\+I\+C\+A\+D(), S\+I\+C\+A\+D(), and superimpose().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=341pt]{classSICAD_a39cdff6871d32429d8ba95b776e0b874_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classSICAD_ae7af7aba5d81b9f1cc3e273a55811a70}\label{classSICAD_ae7af7aba5d81b9f1cc3e273a55811a70}} 
+\index{S\+I\+C\+AD@{S\+I\+C\+AD}!set\+Wireframe@{set\+Wireframe}}
+\index{set\+Wireframe@{set\+Wireframe}!S\+I\+C\+AD@{S\+I\+C\+AD}}
+\subsubsection{\texorpdfstring{set\+Wireframe()}{setWireframe()}}
+{\footnotesize\ttfamily void S\+I\+C\+A\+D\+::set\+Wireframe (\begin{DoxyParamCaption}\item[{G\+Lenum}]{mode }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 936 of file S\+I\+C\+A\+D.\+cpp.
+
+
+
+Referenced by superimpose().
+
+\mbox{\Hypertarget{classSICAD_a4cf80a273b6b0d946cd298472c63ddd4}\label{classSICAD_a4cf80a273b6b0d946cd298472c63ddd4}} 
+\index{S\+I\+C\+AD@{S\+I\+C\+AD}!set\+Wireframe\+Opt@{set\+Wireframe\+Opt}}
+\index{set\+Wireframe\+Opt@{set\+Wireframe\+Opt}!S\+I\+C\+AD@{S\+I\+C\+AD}}
+\subsubsection{\texorpdfstring{set\+Wireframe\+Opt()}{setWireframeOpt()}}
+{\footnotesize\ttfamily void S\+I\+C\+A\+D\+::set\+Wireframe\+Opt (\begin{DoxyParamCaption}\item[{bool}]{show\+\_\+mesh\+\_\+wires }\end{DoxyParamCaption})}
+
+
+
+Definition at line 840 of file S\+I\+C\+A\+D.\+cpp.
+
+
+
+References show\+\_\+mesh\+\_\+mode\+\_\+.
+
+\mbox{\Hypertarget{classSICAD_a356e0ac8a0f130952a72326bedd4ab60}\label{classSICAD_a356e0ac8a0f130952a72326bedd4ab60}} 
+\index{S\+I\+C\+AD@{S\+I\+C\+AD}!superimpose@{superimpose}}
+\index{superimpose@{superimpose}!S\+I\+C\+AD@{S\+I\+C\+AD}}
+\subsubsection{\texorpdfstring{superimpose()}{superimpose()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily bool S\+I\+C\+A\+D\+::superimpose (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classSuperimpose_a178e3d4e2def6635bfcf9454dd4b5d22}{Model\+Pose\+Container}} \&}]{objpos\+\_\+map,  }\item[{const double $\ast$}]{cam\+\_\+x,  }\item[{const double $\ast$}]{cam\+\_\+o,  }\item[{cv\+::\+Mat \&}]{img }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+\mbox{\hyperlink{classSuperimpose}{Superimpose}} one of the mesh models loaded during \mbox{\hyperlink{classSICAD}{S\+I\+C\+AD}} object construction in a given pose from a particular camera viewpoint. 
+
+If the size of cv\+::\+Mat img is not correct to store the result of the superimposition process, it is automatically resized.
+
+\begin{DoxyNote}{Note}
+If cv\+::\+Mat img is a background image it must be of size cam\+\_\+width$\ast$cam\+\_\+height, as specified during object construction, and the \mbox{\hyperlink{classSICAD_a07921943ad3d4016dcbe76135e799754}{S\+I\+C\+A\+D\+::set\+Background\+Opt(bool show\+\_\+background)}} must have been evoked with true.
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em objpos\+\_\+map} & a (tag, pose) container to associate a 7 component \textquotesingle{}pose\textquotesingle{}, (x, y, z) position and a (ux, uy, uz, theta) axis-\/angle orientation, to a mesh with tag \textquotesingle{}tag\textquotesingle{}. \\
+\hline
+{\em cam\+\_\+x} & (x, y, z) position \\
+\hline
+{\em cam\+\_\+o} & (ux, uy, uz, theta) axis-\/angle orientation \\
+\hline
+{\em img} & an image where the result of the superimposition is stored\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true upon success, false otherswise. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classSuperimpose_a62c4c269b8fc34cc36d3d54fa4acb35c}{Superimpose}}.
+
+
+
+Definition at line 526 of file S\+I\+C\+A\+D.\+cpp.
+
+
+
+References fbo\+\_\+, framebuffer\+\_\+height\+\_\+, framebuffer\+\_\+width\+\_\+, get\+Background\+Opt(), get\+View\+Transformation\+Matrix(), get\+Wireframe\+Opt(), has\+\_\+proj\+\_\+matrix\+\_\+, Shader\+::install(), is\+\_\+initialized\+\_\+, model\+\_\+obj\+\_\+, poll\+Or\+Post\+Event(), Shader\+::\+Program, render\+\_\+img\+\_\+height\+\_\+, render\+\_\+img\+\_\+width\+\_\+, set\+Background(), set\+Wireframe(), shader\+\_\+cad\+\_\+, shader\+\_\+frame\+\_\+, tiles\+\_\+cols\+\_\+, tiles\+\_\+rows\+\_\+, Shader\+::uninstall(), vao\+\_\+frame\+\_\+, and window\+\_\+.
+
+
+
+Referenced by main(), and superimpose().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classSICAD_a356e0ac8a0f130952a72326bedd4ab60_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classSICAD_ab15f84cec5a65c8dd6cad85f9b0e1993}\label{classSICAD_ab15f84cec5a65c8dd6cad85f9b0e1993}} 
+\index{S\+I\+C\+AD@{S\+I\+C\+AD}!superimpose@{superimpose}}
+\index{superimpose@{superimpose}!S\+I\+C\+AD@{S\+I\+C\+AD}}
+\subsubsection{\texorpdfstring{superimpose()}{superimpose()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily bool S\+I\+C\+A\+D\+::superimpose (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ \mbox{\hyperlink{classSuperimpose_a178e3d4e2def6635bfcf9454dd4b5d22}{Model\+Pose\+Container}} $>$ \&}]{objpos\+\_\+multimap,  }\item[{const double $\ast$}]{cam\+\_\+x,  }\item[{const double $\ast$}]{cam\+\_\+o,  }\item[{cv\+::\+Mat \&}]{img }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Definition at line 626 of file S\+I\+C\+A\+D.\+cpp.
+
+
+
+References fbo\+\_\+, framebuffer\+\_\+height\+\_\+, framebuffer\+\_\+width\+\_\+, get\+Background\+Opt(), get\+View\+Transformation\+Matrix(), get\+Wireframe\+Opt(), has\+\_\+proj\+\_\+matrix\+\_\+, Shader\+::install(), is\+\_\+initialized\+\_\+, model\+\_\+obj\+\_\+, poll\+Or\+Post\+Event(), Shader\+::\+Program, render\+\_\+img\+\_\+height\+\_\+, render\+\_\+img\+\_\+width\+\_\+, set\+Background(), set\+Wireframe(), shader\+\_\+cad\+\_\+, shader\+\_\+frame\+\_\+, tiles\+\_\+cols\+\_\+, tiles\+\_\+num\+\_\+, tiles\+\_\+rows\+\_\+, Shader\+::uninstall(), vao\+\_\+frame\+\_\+, and window\+\_\+.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classSICAD_ab15f84cec5a65c8dd6cad85f9b0e1993_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classSICAD_af6c19a679de29992c5f9609f4424add0}\label{classSICAD_af6c19a679de29992c5f9609f4424add0}} 
+\index{S\+I\+C\+AD@{S\+I\+C\+AD}!superimpose@{superimpose}}
+\index{superimpose@{superimpose}!S\+I\+C\+AD@{S\+I\+C\+AD}}
+\subsubsection{\texorpdfstring{superimpose()}{superimpose()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily bool S\+I\+C\+A\+D\+::superimpose (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classSuperimpose_a178e3d4e2def6635bfcf9454dd4b5d22}{Model\+Pose\+Container}} \&}]{objpos\+\_\+map,  }\item[{const double $\ast$}]{cam\+\_\+x,  }\item[{const double $\ast$}]{cam\+\_\+o,  }\item[{cv\+::\+Mat \&}]{img,  }\item[{const G\+Lsizei}]{cam\+\_\+width,  }\item[{const G\+Lsizei}]{cam\+\_\+height,  }\item[{const G\+Lfloat}]{cam\+\_\+fx,  }\item[{const G\+Lfloat}]{cam\+\_\+fy,  }\item[{const G\+Lfloat}]{cam\+\_\+cx,  }\item[{const G\+Lfloat}]{cam\+\_\+cy }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Definition at line 740 of file S\+I\+C\+A\+D.\+cpp.
+
+
+
+References is\+\_\+initialized\+\_\+, set\+Projection\+Matrix(), and superimpose().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classSICAD_af6c19a679de29992c5f9609f4424add0_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classSICAD_a269e238387393b44177daa4eae88fedd}\label{classSICAD_a269e238387393b44177daa4eae88fedd}} 
+\index{S\+I\+C\+AD@{S\+I\+C\+AD}!superimpose@{superimpose}}
+\index{superimpose@{superimpose}!S\+I\+C\+AD@{S\+I\+C\+AD}}
+\subsubsection{\texorpdfstring{superimpose()}{superimpose()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily bool S\+I\+C\+A\+D\+::superimpose (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ \mbox{\hyperlink{classSuperimpose_a178e3d4e2def6635bfcf9454dd4b5d22}{Model\+Pose\+Container}} $>$ \&}]{objpos\+\_\+multimap,  }\item[{const double $\ast$}]{cam\+\_\+x,  }\item[{const double $\ast$}]{cam\+\_\+o,  }\item[{cv\+::\+Mat \&}]{img,  }\item[{const G\+Lsizei}]{cam\+\_\+width,  }\item[{const G\+Lsizei}]{cam\+\_\+height,  }\item[{const G\+Lfloat}]{cam\+\_\+fx,  }\item[{const G\+Lfloat}]{cam\+\_\+fy,  }\item[{const G\+Lfloat}]{cam\+\_\+cx,  }\item[{const G\+Lfloat}]{cam\+\_\+cy }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Definition at line 757 of file S\+I\+C\+A\+D.\+cpp.
+
+
+
+References is\+\_\+initialized\+\_\+, set\+Projection\+Matrix(), and superimpose().
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classSICAD_a269e238387393b44177daa4eae88fedd_cgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classSICAD_ad5945f84df0d90113a24b2001ecbc832}\label{classSICAD_ad5945f84df0d90113a24b2001ecbc832}} 
+\index{S\+I\+C\+AD@{S\+I\+C\+AD}!back\+\_\+proj\+\_\+@{back\+\_\+proj\+\_\+}}
+\index{back\+\_\+proj\+\_\+@{back\+\_\+proj\+\_\+}!S\+I\+C\+AD@{S\+I\+C\+AD}}
+\subsubsection{\texorpdfstring{back\+\_\+proj\+\_\+}{back\_proj\_}}
+{\footnotesize\ttfamily glm\+::mat4 S\+I\+C\+A\+D\+::back\+\_\+proj\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 205 of file S\+I\+C\+A\+D.\+h.
+
+
+
+Referenced by init\+S\+I\+C\+A\+D(), and set\+Background().
+
+\mbox{\Hypertarget{classSICAD_a16f7c3c77ddea5ba57bbcbcdd7a8d125}\label{classSICAD_a16f7c3c77ddea5ba57bbcbcdd7a8d125}} 
+\index{S\+I\+C\+AD@{S\+I\+C\+AD}!class\+\_\+counter\+\_\+@{class\+\_\+counter\+\_\+}}
+\index{class\+\_\+counter\+\_\+@{class\+\_\+counter\+\_\+}!S\+I\+C\+AD@{S\+I\+C\+AD}}
+\subsubsection{\texorpdfstring{class\+\_\+counter\+\_\+}{class\_counter\_}}
+{\footnotesize\ttfamily int S\+I\+C\+A\+D\+::class\+\_\+counter\+\_\+ = 0\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Definition at line 167 of file S\+I\+C\+A\+D.\+h.
+
+
+
+Referenced by init\+S\+I\+C\+A\+D(), and $\sim$\+S\+I\+C\+A\+D().
+
+\mbox{\Hypertarget{classSICAD_a2cdcd11dd55a4b02b85d7c32435cc719}\label{classSICAD_a2cdcd11dd55a4b02b85d7c32435cc719}} 
+\index{S\+I\+C\+AD@{S\+I\+C\+AD}!ebo\+\_\+background\+\_\+@{ebo\+\_\+background\+\_\+}}
+\index{ebo\+\_\+background\+\_\+@{ebo\+\_\+background\+\_\+}!S\+I\+C\+AD@{S\+I\+C\+AD}}
+\subsubsection{\texorpdfstring{ebo\+\_\+background\+\_\+}{ebo\_background\_}}
+{\footnotesize\ttfamily G\+Luint S\+I\+C\+A\+D\+::ebo\+\_\+background\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 201 of file S\+I\+C\+A\+D.\+h.
+
+
+
+Referenced by init\+S\+I\+C\+A\+D(), and $\sim$\+S\+I\+C\+A\+D().
+
+\mbox{\Hypertarget{classSICAD_a4c4d2e249ac824528e1fe9f97fa207d9}\label{classSICAD_a4c4d2e249ac824528e1fe9f97fa207d9}} 
+\index{S\+I\+C\+AD@{S\+I\+C\+AD}!far\+\_\+@{far\+\_\+}}
+\index{far\+\_\+@{far\+\_\+}!S\+I\+C\+AD@{S\+I\+C\+AD}}
+\subsubsection{\texorpdfstring{far\+\_\+}{far\_}}
+{\footnotesize\ttfamily const G\+Lfloat S\+I\+C\+A\+D\+::far\+\_\+ = 1000.\+0f\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 185 of file S\+I\+C\+A\+D.\+h.
+
+
+
+Referenced by init\+S\+I\+C\+A\+D(), and set\+Projection\+Matrix().
+
+\mbox{\Hypertarget{classSICAD_a2c173ad18d42e090b46a539f92f3fe9d}\label{classSICAD_a2c173ad18d42e090b46a539f92f3fe9d}} 
+\index{S\+I\+C\+AD@{S\+I\+C\+AD}!fbo\+\_\+@{fbo\+\_\+}}
+\index{fbo\+\_\+@{fbo\+\_\+}!S\+I\+C\+AD@{S\+I\+C\+AD}}
+\subsubsection{\texorpdfstring{fbo\+\_\+}{fbo\_}}
+{\footnotesize\ttfamily G\+Luint S\+I\+C\+A\+D\+::fbo\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 196 of file S\+I\+C\+A\+D.\+h.
+
+
+
+Referenced by init\+S\+I\+C\+A\+D(), superimpose(), and $\sim$\+S\+I\+C\+A\+D().
+
+\mbox{\Hypertarget{classSICAD_a3361bb03e52bc0554bb1e3670ef3a0f9}\label{classSICAD_a3361bb03e52bc0554bb1e3670ef3a0f9}} 
+\index{S\+I\+C\+AD@{S\+I\+C\+AD}!framebuffer\+\_\+height\+\_\+@{framebuffer\+\_\+height\+\_\+}}
+\index{framebuffer\+\_\+height\+\_\+@{framebuffer\+\_\+height\+\_\+}!S\+I\+C\+AD@{S\+I\+C\+AD}}
+\subsubsection{\texorpdfstring{framebuffer\+\_\+height\+\_\+}{framebuffer\_height\_}}
+{\footnotesize\ttfamily G\+Lsizei S\+I\+C\+A\+D\+::framebuffer\+\_\+height\+\_\+ = 0\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 181 of file S\+I\+C\+A\+D.\+h.
+
+
+
+Referenced by init\+O\+G\+L(), init\+S\+I\+C\+A\+D(), and superimpose().
+
+\mbox{\Hypertarget{classSICAD_a08c86b826a1784b132bac3f0792fc604}\label{classSICAD_a08c86b826a1784b132bac3f0792fc604}} 
+\index{S\+I\+C\+AD@{S\+I\+C\+AD}!framebuffer\+\_\+width\+\_\+@{framebuffer\+\_\+width\+\_\+}}
+\index{framebuffer\+\_\+width\+\_\+@{framebuffer\+\_\+width\+\_\+}!S\+I\+C\+AD@{S\+I\+C\+AD}}
+\subsubsection{\texorpdfstring{framebuffer\+\_\+width\+\_\+}{framebuffer\_width\_}}
+{\footnotesize\ttfamily G\+Lsizei S\+I\+C\+A\+D\+::framebuffer\+\_\+width\+\_\+ = 0\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 180 of file S\+I\+C\+A\+D.\+h.
+
+
+
+Referenced by init\+O\+G\+L(), init\+S\+I\+C\+A\+D(), and superimpose().
+
+\mbox{\Hypertarget{classSICAD_a0eb57d114f3f6b50be13bd882552b2f7}\label{classSICAD_a0eb57d114f3f6b50be13bd882552b2f7}} 
+\index{S\+I\+C\+AD@{S\+I\+C\+AD}!has\+\_\+proj\+\_\+matrix\+\_\+@{has\+\_\+proj\+\_\+matrix\+\_\+}}
+\index{has\+\_\+proj\+\_\+matrix\+\_\+@{has\+\_\+proj\+\_\+matrix\+\_\+}!S\+I\+C\+AD@{S\+I\+C\+AD}}
+\subsubsection{\texorpdfstring{has\+\_\+proj\+\_\+matrix\+\_\+}{has\_proj\_matrix\_}}
+{\footnotesize\ttfamily bool S\+I\+C\+A\+D\+::has\+\_\+proj\+\_\+matrix\+\_\+ = false\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 164 of file S\+I\+C\+A\+D.\+h.
+
+
+
+Referenced by set\+Projection\+Matrix(), and superimpose().
+
+\mbox{\Hypertarget{classSICAD_a093da94bc84a46d08f71051c4d88c176}\label{classSICAD_a093da94bc84a46d08f71051c4d88c176}} 
+\index{S\+I\+C\+AD@{S\+I\+C\+AD}!image\+\_\+height\+\_\+@{image\+\_\+height\+\_\+}}
+\index{image\+\_\+height\+\_\+@{image\+\_\+height\+\_\+}!S\+I\+C\+AD@{S\+I\+C\+AD}}
+\subsubsection{\texorpdfstring{image\+\_\+height\+\_\+}{image\_height\_}}
+{\footnotesize\ttfamily G\+Lsizei S\+I\+C\+A\+D\+::image\+\_\+height\+\_\+ = 0\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 178 of file S\+I\+C\+A\+D.\+h.
+
+
+
+Referenced by init\+O\+G\+L().
+
+\mbox{\Hypertarget{classSICAD_ade37d5c3960d164acaa749745f55070f}\label{classSICAD_ade37d5c3960d164acaa749745f55070f}} 
+\index{S\+I\+C\+AD@{S\+I\+C\+AD}!image\+\_\+width\+\_\+@{image\+\_\+width\+\_\+}}
+\index{image\+\_\+width\+\_\+@{image\+\_\+width\+\_\+}!S\+I\+C\+AD@{S\+I\+C\+AD}}
+\subsubsection{\texorpdfstring{image\+\_\+width\+\_\+}{image\_width\_}}
+{\footnotesize\ttfamily G\+Lsizei S\+I\+C\+A\+D\+::image\+\_\+width\+\_\+ = 0\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 177 of file S\+I\+C\+A\+D.\+h.
+
+
+
+Referenced by init\+O\+G\+L().
+
+\mbox{\Hypertarget{classSICAD_aa624c978497506de4a255c5f0301579f}\label{classSICAD_aa624c978497506de4a255c5f0301579f}} 
+\index{S\+I\+C\+AD@{S\+I\+C\+AD}!is\+\_\+initialized\+\_\+@{is\+\_\+initialized\+\_\+}}
+\index{is\+\_\+initialized\+\_\+@{is\+\_\+initialized\+\_\+}!S\+I\+C\+AD@{S\+I\+C\+AD}}
+\subsubsection{\texorpdfstring{is\+\_\+initialized\+\_\+}{is\_initialized\_}}
+{\footnotesize\ttfamily bool S\+I\+C\+A\+D\+::is\+\_\+initialized\+\_\+ = false\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 163 of file S\+I\+C\+A\+D.\+h.
+
+
+
+Referenced by get\+Ogl\+Window\+Should\+Close(), init\+S\+I\+C\+A\+D(), set\+Ogl\+Window\+Should\+Close(), set\+Projection\+Matrix(), and superimpose().
+
+\mbox{\Hypertarget{classSICAD_a9eb34b659cac13b8442ca821455cc1f1}\label{classSICAD_a9eb34b659cac13b8442ca821455cc1f1}} 
+\index{S\+I\+C\+AD@{S\+I\+C\+AD}!log\+\_\+\+I\+D\+\_\+@{log\+\_\+\+I\+D\+\_\+}}
+\index{log\+\_\+\+I\+D\+\_\+@{log\+\_\+\+I\+D\+\_\+}!S\+I\+C\+AD@{S\+I\+C\+AD}}
+\subsubsection{\texorpdfstring{log\+\_\+\+I\+D\+\_\+}{log\_ID\_}}
+{\footnotesize\ttfamily const std\+::string S\+I\+C\+A\+D\+::log\+\_\+\+I\+D\+\_\+ = \char`\"{}\mbox{[}SI-\/C\+AD\mbox{]}\char`\"{}\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 171 of file S\+I\+C\+A\+D.\+h.
+
+
+
+Referenced by init\+O\+G\+L(), init\+S\+I\+C\+A\+D(), S\+I\+C\+A\+D(), and $\sim$\+S\+I\+C\+A\+D().
+
+\mbox{\Hypertarget{classSICAD_a6a4623d27b2ee48ad0db90bd075c708c}\label{classSICAD_a6a4623d27b2ee48ad0db90bd075c708c}} 
+\index{S\+I\+C\+AD@{S\+I\+C\+AD}!main\+\_\+thread\+\_\+id\+\_\+@{main\+\_\+thread\+\_\+id\+\_\+}}
+\index{main\+\_\+thread\+\_\+id\+\_\+@{main\+\_\+thread\+\_\+id\+\_\+}!S\+I\+C\+AD@{S\+I\+C\+AD}}
+\subsubsection{\texorpdfstring{main\+\_\+thread\+\_\+id\+\_\+}{main\_thread\_id\_}}
+{\footnotesize\ttfamily std\+::thread\+::id S\+I\+C\+A\+D\+::main\+\_\+thread\+\_\+id\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 187 of file S\+I\+C\+A\+D.\+h.
+
+
+
+Referenced by init\+O\+G\+L(), and poll\+Or\+Post\+Event().
+
+\mbox{\Hypertarget{classSICAD_a34b0de96321855145937cc5858c019b0}\label{classSICAD_a34b0de96321855145937cc5858c019b0}} 
+\index{S\+I\+C\+AD@{S\+I\+C\+AD}!mesh\+\_\+mmaps\+\_\+@{mesh\+\_\+mmaps\+\_\+}}
+\index{mesh\+\_\+mmaps\+\_\+@{mesh\+\_\+mmaps\+\_\+}!S\+I\+C\+AD@{S\+I\+C\+AD}}
+\subsubsection{\texorpdfstring{mesh\+\_\+mmaps\+\_\+}{mesh\_mmaps\_}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classSICAD_a7e092dede6f660355462d6d548214198}{M\+I\+P\+Maps}} S\+I\+C\+A\+D\+::mesh\+\_\+mmaps\+\_\+ = \mbox{\hyperlink{classSICAD_a7e092dede6f660355462d6d548214198ad879c351426770bc0b13c3628db1e636}{M\+I\+P\+Maps\+::nearest}}\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 191 of file S\+I\+C\+A\+D.\+h.
+
+
+
+Referenced by get\+Mipmaps\+Opt().
+
+\mbox{\Hypertarget{classSICAD_a05fea2b5b027a3b7f37ef9ea4ecd64f0}\label{classSICAD_a05fea2b5b027a3b7f37ef9ea4ecd64f0}} 
+\index{S\+I\+C\+AD@{S\+I\+C\+AD}!model\+\_\+obj\+\_\+@{model\+\_\+obj\+\_\+}}
+\index{model\+\_\+obj\+\_\+@{model\+\_\+obj\+\_\+}!S\+I\+C\+AD@{S\+I\+C\+AD}}
+\subsubsection{\texorpdfstring{model\+\_\+obj\+\_\+}{model\_obj\_}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classSICAD_aca3c9693d298f2e8dc171194c6a7507c}{Model\+Container}} S\+I\+C\+A\+D\+::model\+\_\+obj\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 195 of file S\+I\+C\+A\+D.\+h.
+
+
+
+Referenced by init\+S\+I\+C\+A\+D(), superimpose(), and $\sim$\+S\+I\+C\+A\+D().
+
+\mbox{\Hypertarget{classSICAD_a690437655965101bad97d32e98015dd5}\label{classSICAD_a690437655965101bad97d32e98015dd5}} 
+\index{S\+I\+C\+AD@{S\+I\+C\+AD}!near\+\_\+@{near\+\_\+}}
+\index{near\+\_\+@{near\+\_\+}!S\+I\+C\+AD@{S\+I\+C\+AD}}
+\subsubsection{\texorpdfstring{near\+\_\+}{near\_}}
+{\footnotesize\ttfamily const G\+Lfloat S\+I\+C\+A\+D\+::near\+\_\+ = 0.\+001f\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 184 of file S\+I\+C\+A\+D.\+h.
+
+
+
+Referenced by set\+Projection\+Matrix().
+
+\mbox{\Hypertarget{classSICAD_a95af2758122e6420369516fd13fd03cc}\label{classSICAD_a95af2758122e6420369516fd13fd03cc}} 
+\index{S\+I\+C\+AD@{S\+I\+C\+AD}!ogl\+\_\+to\+\_\+cam\+\_\+@{ogl\+\_\+to\+\_\+cam\+\_\+}}
+\index{ogl\+\_\+to\+\_\+cam\+\_\+@{ogl\+\_\+to\+\_\+cam\+\_\+}!S\+I\+C\+AD@{S\+I\+C\+AD}}
+\subsubsection{\texorpdfstring{ogl\+\_\+to\+\_\+cam\+\_\+}{ogl\_to\_cam\_}}
+{\footnotesize\ttfamily glm\+::mat3 S\+I\+C\+A\+D\+::ogl\+\_\+to\+\_\+cam\+\_\+ = glm\+::mat3(1.\+0f)\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 179 of file S\+I\+C\+A\+D.\+h.
+
+
+
+Referenced by get\+View\+Transformation\+Matrix(), and init\+S\+I\+C\+A\+D().
+
+\mbox{\Hypertarget{classSICAD_afb91b682fd1f6629f163ab321869e7e0}\label{classSICAD_afb91b682fd1f6629f163ab321869e7e0}} 
+\index{S\+I\+C\+AD@{S\+I\+C\+AD}!projection\+\_\+@{projection\+\_\+}}
+\index{projection\+\_\+@{projection\+\_\+}!S\+I\+C\+AD@{S\+I\+C\+AD}}
+\subsubsection{\texorpdfstring{projection\+\_\+}{projection\_}}
+{\footnotesize\ttfamily glm\+::mat4 S\+I\+C\+A\+D\+::projection\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 206 of file S\+I\+C\+A\+D.\+h.
+
+
+
+Referenced by set\+Projection\+Matrix().
+
+\mbox{\Hypertarget{classSICAD_a29691bc258b500253364c9688f7af655}\label{classSICAD_a29691bc258b500253364c9688f7af655}} 
+\index{S\+I\+C\+AD@{S\+I\+C\+AD}!render\+\_\+img\+\_\+height\+\_\+@{render\+\_\+img\+\_\+height\+\_\+}}
+\index{render\+\_\+img\+\_\+height\+\_\+@{render\+\_\+img\+\_\+height\+\_\+}!S\+I\+C\+AD@{S\+I\+C\+AD}}
+\subsubsection{\texorpdfstring{render\+\_\+img\+\_\+height\+\_\+}{render\_img\_height\_}}
+{\footnotesize\ttfamily G\+Lsizei S\+I\+C\+A\+D\+::render\+\_\+img\+\_\+height\+\_\+ = 0\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 183 of file S\+I\+C\+A\+D.\+h.
+
+
+
+Referenced by init\+O\+G\+L(), and superimpose().
+
+\mbox{\Hypertarget{classSICAD_acbd2113a0cc446db6f59fdedd890aad9}\label{classSICAD_acbd2113a0cc446db6f59fdedd890aad9}} 
+\index{S\+I\+C\+AD@{S\+I\+C\+AD}!render\+\_\+img\+\_\+width\+\_\+@{render\+\_\+img\+\_\+width\+\_\+}}
+\index{render\+\_\+img\+\_\+width\+\_\+@{render\+\_\+img\+\_\+width\+\_\+}!S\+I\+C\+AD@{S\+I\+C\+AD}}
+\subsubsection{\texorpdfstring{render\+\_\+img\+\_\+width\+\_\+}{render\_img\_width\_}}
+{\footnotesize\ttfamily G\+Lsizei S\+I\+C\+A\+D\+::render\+\_\+img\+\_\+width\+\_\+ = 0\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 182 of file S\+I\+C\+A\+D.\+h.
+
+
+
+Referenced by init\+O\+G\+L(), and superimpose().
+
+\mbox{\Hypertarget{classSICAD_aca24504d58ce97106dbc95925f36fca0}\label{classSICAD_aca24504d58ce97106dbc95925f36fca0}} 
+\index{S\+I\+C\+AD@{S\+I\+C\+AD}!renderbuffer\+\_\+size\+\_\+@{renderbuffer\+\_\+size\+\_\+}}
+\index{renderbuffer\+\_\+size\+\_\+@{renderbuffer\+\_\+size\+\_\+}!S\+I\+C\+AD@{S\+I\+C\+AD}}
+\subsubsection{\texorpdfstring{renderbuffer\+\_\+size\+\_\+}{renderbuffer\_size\_}}
+{\footnotesize\ttfamily G\+Lsizei S\+I\+C\+A\+D\+::renderbuffer\+\_\+size\+\_\+ = 0\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Definition at line 168 of file S\+I\+C\+A\+D.\+h.
+
+
+
+Referenced by init\+O\+G\+L().
+
+\mbox{\Hypertarget{classSICAD_a46edf33acc9f7ea3bd98c7ee6388ce9c}\label{classSICAD_a46edf33acc9f7ea3bd98c7ee6388ce9c}} 
+\index{S\+I\+C\+AD@{S\+I\+C\+AD}!shader\+\_\+background\+\_\+@{shader\+\_\+background\+\_\+}}
+\index{shader\+\_\+background\+\_\+@{shader\+\_\+background\+\_\+}!S\+I\+C\+AD@{S\+I\+C\+AD}}
+\subsubsection{\texorpdfstring{shader\+\_\+background\+\_\+}{shader\_background\_}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classShader}{Shader}}$\ast$ S\+I\+C\+A\+D\+::shader\+\_\+background\+\_\+ = nullptr\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 192 of file S\+I\+C\+A\+D.\+h.
+
+
+
+Referenced by init\+S\+I\+C\+A\+D(), set\+Background(), and $\sim$\+S\+I\+C\+A\+D().
+
+\mbox{\Hypertarget{classSICAD_a6c11f0e8dc8cbdd91748c230fc680833}\label{classSICAD_a6c11f0e8dc8cbdd91748c230fc680833}} 
+\index{S\+I\+C\+AD@{S\+I\+C\+AD}!shader\+\_\+cad\+\_\+@{shader\+\_\+cad\+\_\+}}
+\index{shader\+\_\+cad\+\_\+@{shader\+\_\+cad\+\_\+}!S\+I\+C\+AD@{S\+I\+C\+AD}}
+\subsubsection{\texorpdfstring{shader\+\_\+cad\+\_\+}{shader\_cad\_}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classShader}{Shader}}$\ast$ S\+I\+C\+A\+D\+::shader\+\_\+cad\+\_\+ = nullptr\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 193 of file S\+I\+C\+A\+D.\+h.
+
+
+
+Referenced by init\+S\+I\+C\+A\+D(), set\+Projection\+Matrix(), superimpose(), and $\sim$\+S\+I\+C\+A\+D().
+
+\mbox{\Hypertarget{classSICAD_ac921e60623f3797253bcbcdd445b903b}\label{classSICAD_ac921e60623f3797253bcbcdd445b903b}} 
+\index{S\+I\+C\+AD@{S\+I\+C\+AD}!shader\+\_\+frame\+\_\+@{shader\+\_\+frame\+\_\+}}
+\index{shader\+\_\+frame\+\_\+@{shader\+\_\+frame\+\_\+}!S\+I\+C\+AD@{S\+I\+C\+AD}}
+\subsubsection{\texorpdfstring{shader\+\_\+frame\+\_\+}{shader\_frame\_}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classShader}{Shader}}$\ast$ S\+I\+C\+A\+D\+::shader\+\_\+frame\+\_\+ = nullptr\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 194 of file S\+I\+C\+A\+D.\+h.
+
+
+
+Referenced by init\+S\+I\+C\+A\+D(), set\+Projection\+Matrix(), and superimpose().
+
+\mbox{\Hypertarget{classSICAD_a8db9e37d71a14883be4879e9ea4b6a02}\label{classSICAD_a8db9e37d71a14883be4879e9ea4b6a02}} 
+\index{S\+I\+C\+AD@{S\+I\+C\+AD}!show\+\_\+background\+\_\+@{show\+\_\+background\+\_\+}}
+\index{show\+\_\+background\+\_\+@{show\+\_\+background\+\_\+}!S\+I\+C\+AD@{S\+I\+C\+AD}}
+\subsubsection{\texorpdfstring{show\+\_\+background\+\_\+}{show\_background\_}}
+{\footnotesize\ttfamily bool S\+I\+C\+A\+D\+::show\+\_\+background\+\_\+ = false\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 189 of file S\+I\+C\+A\+D.\+h.
+
+
+
+Referenced by get\+Background\+Opt(), and set\+Background\+Opt().
+
+\mbox{\Hypertarget{classSICAD_a9c4c3ba5d071f763ee1956fa31faa3f8}\label{classSICAD_a9c4c3ba5d071f763ee1956fa31faa3f8}} 
+\index{S\+I\+C\+AD@{S\+I\+C\+AD}!show\+\_\+mesh\+\_\+mode\+\_\+@{show\+\_\+mesh\+\_\+mode\+\_\+}}
+\index{show\+\_\+mesh\+\_\+mode\+\_\+@{show\+\_\+mesh\+\_\+mode\+\_\+}!S\+I\+C\+AD@{S\+I\+C\+AD}}
+\subsubsection{\texorpdfstring{show\+\_\+mesh\+\_\+mode\+\_\+}{show\_mesh\_mode\_}}
+{\footnotesize\ttfamily G\+Lenum S\+I\+C\+A\+D\+::show\+\_\+mesh\+\_\+mode\+\_\+ = G\+L\+\_\+\+F\+I\+LL\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 190 of file S\+I\+C\+A\+D.\+h.
+
+
+
+Referenced by get\+Wireframe\+Opt(), and set\+Wireframe\+Opt().
+
+\mbox{\Hypertarget{classSICAD_a2728fb0fa0be11f0992bc81b4873da4f}\label{classSICAD_a2728fb0fa0be11f0992bc81b4873da4f}} 
+\index{S\+I\+C\+AD@{S\+I\+C\+AD}!texture\+\_\+background\+\_\+@{texture\+\_\+background\+\_\+}}
+\index{texture\+\_\+background\+\_\+@{texture\+\_\+background\+\_\+}!S\+I\+C\+AD@{S\+I\+C\+AD}}
+\subsubsection{\texorpdfstring{texture\+\_\+background\+\_\+}{texture\_background\_}}
+{\footnotesize\ttfamily G\+Luint S\+I\+C\+A\+D\+::texture\+\_\+background\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 199 of file S\+I\+C\+A\+D.\+h.
+
+
+
+Referenced by init\+S\+I\+C\+A\+D(), set\+Background(), and $\sim$\+S\+I\+C\+A\+D().
+
+\mbox{\Hypertarget{classSICAD_a50f1ec3b2545ca40d58466735da80fc6}\label{classSICAD_a50f1ec3b2545ca40d58466735da80fc6}} 
+\index{S\+I\+C\+AD@{S\+I\+C\+AD}!texture\+\_\+color\+\_\+buffer\+\_\+@{texture\+\_\+color\+\_\+buffer\+\_\+}}
+\index{texture\+\_\+color\+\_\+buffer\+\_\+@{texture\+\_\+color\+\_\+buffer\+\_\+}!S\+I\+C\+AD@{S\+I\+C\+AD}}
+\subsubsection{\texorpdfstring{texture\+\_\+color\+\_\+buffer\+\_\+}{texture\_color\_buffer\_}}
+{\footnotesize\ttfamily G\+Luint S\+I\+C\+A\+D\+::texture\+\_\+color\+\_\+buffer\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 197 of file S\+I\+C\+A\+D.\+h.
+
+
+
+Referenced by init\+S\+I\+C\+A\+D(), and $\sim$\+S\+I\+C\+A\+D().
+
+\mbox{\Hypertarget{classSICAD_a2fed5ac56bb2206fe8f6eccc9d784015}\label{classSICAD_a2fed5ac56bb2206fe8f6eccc9d784015}} 
+\index{S\+I\+C\+AD@{S\+I\+C\+AD}!texture\+\_\+depth\+\_\+buffer\+\_\+@{texture\+\_\+depth\+\_\+buffer\+\_\+}}
+\index{texture\+\_\+depth\+\_\+buffer\+\_\+@{texture\+\_\+depth\+\_\+buffer\+\_\+}!S\+I\+C\+AD@{S\+I\+C\+AD}}
+\subsubsection{\texorpdfstring{texture\+\_\+depth\+\_\+buffer\+\_\+}{texture\_depth\_buffer\_}}
+{\footnotesize\ttfamily G\+Luint S\+I\+C\+A\+D\+::texture\+\_\+depth\+\_\+buffer\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 198 of file S\+I\+C\+A\+D.\+h.
+
+
+
+Referenced by init\+S\+I\+C\+A\+D(), and $\sim$\+S\+I\+C\+A\+D().
+
+\mbox{\Hypertarget{classSICAD_ac2678cc1ad1b008912fec7e6892b23e1}\label{classSICAD_ac2678cc1ad1b008912fec7e6892b23e1}} 
+\index{S\+I\+C\+AD@{S\+I\+C\+AD}!tiles\+\_\+cols\+\_\+@{tiles\+\_\+cols\+\_\+}}
+\index{tiles\+\_\+cols\+\_\+@{tiles\+\_\+cols\+\_\+}!S\+I\+C\+AD@{S\+I\+C\+AD}}
+\subsubsection{\texorpdfstring{tiles\+\_\+cols\+\_\+}{tiles\_cols\_}}
+{\footnotesize\ttfamily G\+Lsizei S\+I\+C\+A\+D\+::tiles\+\_\+cols\+\_\+ = 0\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 175 of file S\+I\+C\+A\+D.\+h.
+
+
+
+Referenced by get\+Tiles\+Cols(), get\+Tiles\+Number(), init\+O\+G\+L(), and superimpose().
+
+\mbox{\Hypertarget{classSICAD_a68723ee57cc9a1e02bc0dbda54a584ff}\label{classSICAD_a68723ee57cc9a1e02bc0dbda54a584ff}} 
+\index{S\+I\+C\+AD@{S\+I\+C\+AD}!tiles\+\_\+num\+\_\+@{tiles\+\_\+num\+\_\+}}
+\index{tiles\+\_\+num\+\_\+@{tiles\+\_\+num\+\_\+}!S\+I\+C\+AD@{S\+I\+C\+AD}}
+\subsubsection{\texorpdfstring{tiles\+\_\+num\+\_\+}{tiles\_num\_}}
+{\footnotesize\ttfamily G\+Lint S\+I\+C\+A\+D\+::tiles\+\_\+num\+\_\+ = 0\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 174 of file S\+I\+C\+A\+D.\+h.
+
+
+
+Referenced by init\+O\+G\+L(), and superimpose().
+
+\mbox{\Hypertarget{classSICAD_aca3efa8f3fb75b3ee02474d4ec00e49e}\label{classSICAD_aca3efa8f3fb75b3ee02474d4ec00e49e}} 
+\index{S\+I\+C\+AD@{S\+I\+C\+AD}!tiles\+\_\+rows\+\_\+@{tiles\+\_\+rows\+\_\+}}
+\index{tiles\+\_\+rows\+\_\+@{tiles\+\_\+rows\+\_\+}!S\+I\+C\+AD@{S\+I\+C\+AD}}
+\subsubsection{\texorpdfstring{tiles\+\_\+rows\+\_\+}{tiles\_rows\_}}
+{\footnotesize\ttfamily G\+Lsizei S\+I\+C\+A\+D\+::tiles\+\_\+rows\+\_\+ = 0\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 176 of file S\+I\+C\+A\+D.\+h.
+
+
+
+Referenced by get\+Tiles\+Number(), get\+Tiles\+Rows(), init\+O\+G\+L(), and superimpose().
+
+\mbox{\Hypertarget{classSICAD_a19306fe768bae547e18a3b9366e37389}\label{classSICAD_a19306fe768bae547e18a3b9366e37389}} 
+\index{S\+I\+C\+AD@{S\+I\+C\+AD}!vao\+\_\+background\+\_\+@{vao\+\_\+background\+\_\+}}
+\index{vao\+\_\+background\+\_\+@{vao\+\_\+background\+\_\+}!S\+I\+C\+AD@{S\+I\+C\+AD}}
+\subsubsection{\texorpdfstring{vao\+\_\+background\+\_\+}{vao\_background\_}}
+{\footnotesize\ttfamily G\+Luint S\+I\+C\+A\+D\+::vao\+\_\+background\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 200 of file S\+I\+C\+A\+D.\+h.
+
+
+
+Referenced by init\+S\+I\+C\+A\+D(), set\+Background(), and $\sim$\+S\+I\+C\+A\+D().
+
+\mbox{\Hypertarget{classSICAD_ae91abeb0fe30f27e0fc40649235f3437}\label{classSICAD_ae91abeb0fe30f27e0fc40649235f3437}} 
+\index{S\+I\+C\+AD@{S\+I\+C\+AD}!vao\+\_\+frame\+\_\+@{vao\+\_\+frame\+\_\+}}
+\index{vao\+\_\+frame\+\_\+@{vao\+\_\+frame\+\_\+}!S\+I\+C\+AD@{S\+I\+C\+AD}}
+\subsubsection{\texorpdfstring{vao\+\_\+frame\+\_\+}{vao\_frame\_}}
+{\footnotesize\ttfamily G\+Luint S\+I\+C\+A\+D\+::vao\+\_\+frame\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 203 of file S\+I\+C\+A\+D.\+h.
+
+
+
+Referenced by init\+S\+I\+C\+A\+D(), superimpose(), and $\sim$\+S\+I\+C\+A\+D().
+
+\mbox{\Hypertarget{classSICAD_a86d6184b8c557460317a158e8d9508d1}\label{classSICAD_a86d6184b8c557460317a158e8d9508d1}} 
+\index{S\+I\+C\+AD@{S\+I\+C\+AD}!vbo\+\_\+background\+\_\+@{vbo\+\_\+background\+\_\+}}
+\index{vbo\+\_\+background\+\_\+@{vbo\+\_\+background\+\_\+}!S\+I\+C\+AD@{S\+I\+C\+AD}}
+\subsubsection{\texorpdfstring{vbo\+\_\+background\+\_\+}{vbo\_background\_}}
+{\footnotesize\ttfamily G\+Luint S\+I\+C\+A\+D\+::vbo\+\_\+background\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 202 of file S\+I\+C\+A\+D.\+h.
+
+
+
+Referenced by init\+S\+I\+C\+A\+D(), and $\sim$\+S\+I\+C\+A\+D().
+
+\mbox{\Hypertarget{classSICAD_af58ffe3edf622ab96f669fcd6e210be9}\label{classSICAD_af58ffe3edf622ab96f669fcd6e210be9}} 
+\index{S\+I\+C\+AD@{S\+I\+C\+AD}!vbo\+\_\+frame\+\_\+@{vbo\+\_\+frame\+\_\+}}
+\index{vbo\+\_\+frame\+\_\+@{vbo\+\_\+frame\+\_\+}!S\+I\+C\+AD@{S\+I\+C\+AD}}
+\subsubsection{\texorpdfstring{vbo\+\_\+frame\+\_\+}{vbo\_frame\_}}
+{\footnotesize\ttfamily G\+Luint S\+I\+C\+A\+D\+::vbo\+\_\+frame\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 204 of file S\+I\+C\+A\+D.\+h.
+
+
+
+Referenced by init\+S\+I\+C\+A\+D(), and $\sim$\+S\+I\+C\+A\+D().
+
+\mbox{\Hypertarget{classSICAD_a3e55fa9ffa99ef200bfc15d6a105698a}\label{classSICAD_a3e55fa9ffa99ef200bfc15d6a105698a}} 
+\index{S\+I\+C\+AD@{S\+I\+C\+AD}!window\+\_\+@{window\+\_\+}}
+\index{window\+\_\+@{window\+\_\+}!S\+I\+C\+AD@{S\+I\+C\+AD}}
+\subsubsection{\texorpdfstring{window\+\_\+}{window\_}}
+{\footnotesize\ttfamily G\+L\+F\+Wwindow$\ast$ S\+I\+C\+A\+D\+::window\+\_\+ = nullptr\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 173 of file S\+I\+C\+A\+D.\+h.
+
+
+
+Referenced by get\+Ogl\+Window\+Should\+Close(), init\+O\+G\+L(), init\+S\+I\+C\+A\+D(), set\+Ogl\+Window\+Should\+Close(), set\+Projection\+Matrix(), superimpose(), and $\sim$\+S\+I\+C\+A\+D().
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/cfantacci/\+Git\+Hub/superimpose-\/mesh-\/lib/src/\+Superimpose\+Mesh/include/\+Superimpose\+Mesh/\mbox{\hyperlink{SICAD_8h}{S\+I\+C\+A\+D.\+h}}\item 
+C\+:/\+Users/cfantacci/\+Git\+Hub/superimpose-\/mesh-\/lib/src/\+Superimpose\+Mesh/src/\mbox{\hyperlink{SICAD_8cpp}{S\+I\+C\+A\+D.\+cpp}}\end{DoxyCompactItemize}
