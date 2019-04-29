@@ -69,6 +69,23 @@ SICAD::SICAD
 { }
 
 
+static void glewPrintExt (const char* name, GLboolean def1, GLboolean def2, GLboolean def3)
+{
+    unsigned int i;
+    printf("\n%s:", name);
+    for (i=0; i<62-strlen(name); i++) printf(" ");
+    printf("%s ", def1 ? "OK" : "MISSING");
+    if (def1 != def2)
+        printf("[%s] ", def2 ? "OK" : "MISSING");
+    if (def1 != def3)
+        printf("[%s]\n", def3 ? "OK" : "MISSING");
+    else
+        printf("\n");
+    for (i=0; i<strlen(name)+1; i++) printf("-");
+    printf("\n");
+}
+
+
 SICAD::SICAD
 (
     const ModelPathContainer& objfile_map,
@@ -102,7 +119,17 @@ SICAD::SICAD
     glfwWindowHint(GLFW_RESIZABLE, GL_FALSE);
     glfwWindowHint(GLFW_VISIBLE, GL_FALSE);
     glfwWindowHint(GLFW_OPENGL_FORWARD_COMPAT, GL_TRUE);
-    glfwWindowHint(GLFW_CONTEXT_RELEASE_BEHAVIOR, GLFW_RELEASE_BEHAVIOR_NONE);
+    glewPrintExt("GL_KHR_context_flush_control", GLEW_KHR_context_flush_control, glewIsSupported("GL_KHR_context_flush_control"), glewGetExtension("GL_KHR_context_flush_control"));
+    if(GLEW_KHR_context_flush_control == GL_TRUE)
+    {
+        std::cout << "GLEW_KHR_context_flush_control is TRUE" << std::endl;
+        glfwWindowHint(GLFW_CONTEXT_RELEASE_BEHAVIOR, GLFW_RELEASE_BEHAVIOR_NONE);
+    }
+    else if (GLEW_KHR_context_flush_control == GL_FALSE)
+    {
+        std::cout << "GLEW_KHR_context_flush_control is FALSE" << std::endl;
+    }
+    // glfwWindowHint(GLFW_CONTEXT_RELEASE_BEHAVIOR, GLFW_RELEASE_BEHAVIOR_NONE);
 #ifdef GLFW_MAC
     glfwWindowHint(GLFW_COCOA_RETINA_FRAMEBUFFER, GL_FALSE);
 #endif
@@ -146,12 +173,30 @@ SICAD::SICAD
     tile_img_height_ = framebuffer_height_ / tiles_rows_;
     std::cout << log_ID_ << "The rendered image size is " + std::to_string(tile_img_width_) + "x" + std::to_string(tile_img_height_) + "." << std::endl;
 
+    glewPrintExt("GL_KHR_context_flush_control", GLEW_KHR_context_flush_control, glewIsSupported("GL_KHR_context_flush_control"), glewGetExtension("GL_KHR_context_flush_control"));
+    if(GLEW_KHR_context_flush_control == GL_TRUE)
+    {
+        std::cout << "GLEW_KHR_context_flush_control is TRUE" << std::endl;
+    }
+    else if (GLEW_KHR_context_flush_control == GL_FALSE)
+    {
+        std::cout << "GLEW_KHR_context_flush_control is FALSE" << std::endl;
+    }
 
     /* Initialize GLEW to use the OpenGL implementation provided by the videocard manufacturer. */
     glewExperimental = GL_TRUE;
     if (glewInit() != GLEW_OK)
         throw std::runtime_error("ERROR::SICAD::CTOR\nERROR:\n\tFailed to initialize GLEW.");
 
+    glewPrintExt("GL_KHR_context_flush_control", GLEW_KHR_context_flush_control, glewIsSupported("GL_KHR_context_flush_control"), glewGetExtension("GL_KHR_context_flush_control"));
+    if(GLEW_KHR_context_flush_control == GL_TRUE)
+    {
+        std::cout << "GLEW_KHR_context_flush_control is TRUE" << std::endl;
+    }
+    else if (GLEW_KHR_context_flush_control == GL_FALSE)
+    {
+        std::cout << "GLEW_KHR_context_flush_control is FALSE" << std::endl;
+    }
 
     /* Set GL property. */
     glfwPollEvents();
