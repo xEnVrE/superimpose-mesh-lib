@@ -13,6 +13,7 @@
 #include "Model.h"
 #include "Shader.h"
 
+#include <istream>
 #include <memory>
 #include <string>
 #include <thread>
@@ -32,7 +33,11 @@ class SICAD : public Superimpose
 public:
     typedef typename std::unordered_map<std::string, std::string> ModelPathContainer;
 
+    typedef typename std::unordered_map<std::string, std::basic_istream<char>*> ModelStreamContainer;
+
     typedef typename std::pair<std::string, std::string> ModelPathElement;
+
+    typedef typename std::pair<std::string, std::basic_istream<char>*> ModelStreamElement;
 
     typedef typename std::unordered_map<std::string, Model*> ModelContainer;
 
@@ -59,6 +64,22 @@ public:
      * @param cam_fy focal Length along the y axis in pixels.
      */
     SICAD(const ModelPathContainer& objfile_map, const GLsizei cam_width, const GLsizei cam_height, const GLfloat cam_fx, const GLfloat cam_fy, const GLfloat cam_cx, const GLfloat cam_cy);
+
+    /**
+     * Create a SICAD object with a dedicated OpenGL context and default shaders.
+     *
+     * Only 1 image will be rendered in the OpenGL context.
+     *
+     * The reference frame of the OpenGL virtual camera is the standard right-handed system and can be
+     * changed by means of `ogl_to_cam` parameter.
+     *
+     * @param objstream_map A (tag, stream) container to associate a 'tag' to the mesh file contained in the stream 'stream'.
+     * @param cam_width Camera or image width.
+     * @param cam_height Camera or image height.
+     * @param cam_fx focal Length along the x axis in pixels.
+     * @param cam_fy focal Length along the y axis in pixels.
+     */
+    SICAD(const ModelStreamContainer& objstream_map, const GLsizei cam_width, const GLsizei cam_height, const GLfloat cam_fx, const GLfloat cam_fy, const GLfloat cam_cx, const GLfloat cam_cy);
 
     /**
      * Create a SICAD object with a dedicated OpenGL context and default shaders.
@@ -148,7 +169,7 @@ public:
      * @param shader_folder Path to the folder containing the above-mentioned required shaders.
      * @param ogl_to_cam A 7-component pose vector, (x, y, z) position and a (ux, uy, uz, theta) axis-angle orientation, defining a camera rotation applied to the OpenGL camera.
      */
-    SICAD(const ModelPathContainer& objfile_map, const GLsizei cam_width, const GLsizei cam_height, const GLfloat cam_fx, const GLfloat cam_fy, const GLfloat cam_cx, const GLfloat cam_cy, const GLint num_images, const std::string& shader_folder, const std::vector<float>& ogl_to_cam);
+    SICAD(const GLsizei cam_width, const GLsizei cam_height, const GLfloat cam_fx, const GLfloat cam_fy, const GLfloat cam_cx, const GLfloat cam_cy, const GLint num_images, const std::string& shader_folder, const std::vector<float>& ogl_to_cam, const ModelPathContainer& objfile_map = ModelPathContainer(), const ModelStreamContainer& objstream_map = ModelStreamContainer());
 
     virtual ~SICAD();
 
