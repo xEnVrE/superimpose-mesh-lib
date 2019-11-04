@@ -7,6 +7,7 @@
 
 #include "SuperimposeMesh/Model.h"
 
+#include <sstream>
 #include <iostream>
 
 #include <assimp/Importer.hpp>
@@ -23,6 +24,11 @@ Model::Model(const GLchar* path)
     loadModel(path);
 }
 
+
+Model::Model(const std::basic_istream<char>* model_stream)
+{
+    loadModel(model_stream);
+}
 
 void Model::Draw(Shader shader)
 {
@@ -59,6 +65,20 @@ void Model::loadModel(std::string path)
     {
        directory_ = path.substr(0, foundpos);
     }
+
+    processNode(scene->mRootNode, scene);
+}
+
+
+void Model::loadModel(const std::basic_istream<char>* model_stream)
+{
+    std::ostringstream sstream;
+    sstream << model_stream->rdbuf();
+    const std::string model_data(sstream.str());
+    const char* model_data_pointer = model_data.c_str();
+
+    Assimp::Importer import;
+    const aiScene* scene = import.ReadFileFromMemory(model_data_pointer, model_data.length(), aiProcess_Triangulate | aiProcess_FlipUVs);
 
     processNode(scene->mRootNode, scene);
 }
