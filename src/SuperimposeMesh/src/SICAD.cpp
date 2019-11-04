@@ -35,7 +35,21 @@ SICAD::SICAD
     const GLfloat cam_cx,
     const GLfloat cam_cy
 ) :
-    SICAD(objfile_map, cam_width, cam_height, cam_fx, cam_fy, cam_cx, cam_cy, 1, "__prc/shader", { 1.0f, 0.0f, 0.0f, 0.0f })
+    SICAD(cam_width, cam_height, cam_fx, cam_fy, cam_cx, cam_cy, 1, "__prc/shader", { 1.0f, 0.0f, 0.0f, 0.0f }, objfile_map)
+{ }
+
+
+SICAD::SICAD
+(
+    const ModelStreamContainer& objstream_map,
+    const GLsizei cam_width,
+    const GLsizei cam_height,
+    const GLfloat cam_fx,
+    const GLfloat cam_fy,
+    const GLfloat cam_cx,
+    const GLfloat cam_cy
+) :
+    SICAD(cam_width, cam_height, cam_fx, cam_fy, cam_cx, cam_cy, 1, "__prc/shader", { 1.0f, 0.0f, 0.0f, 0.0f }, ModelPathContainer(), objstream_map)
 { }
 
 
@@ -50,7 +64,7 @@ SICAD::SICAD
     const GLfloat cam_cy,
     const GLint num_images
 ) :
-    SICAD(objfile_map, cam_width, cam_height, cam_fx, cam_fy, cam_cx, cam_cy, num_images, "__prc/shader", { 1.0f, 0.0f, 0.0f, 0.0f })
+    SICAD(cam_width, cam_height, cam_fx, cam_fy, cam_cx, cam_cy, num_images, "__prc/shader", { 1.0f, 0.0f, 0.0f, 0.0f }, objfile_map)
 { }
 
 
@@ -66,13 +80,12 @@ SICAD::SICAD
     const GLint num_images,
     const std::string& shader_folder
 ) :
-    SICAD(objfile_map, cam_width, cam_height, cam_fx, cam_fy, cam_cx, cam_cy, num_images, shader_folder, { 1.0f, 0.0f, 0.0f, 0.0f })
+    SICAD(cam_width, cam_height, cam_fx, cam_fy, cam_cx, cam_cy, num_images, shader_folder, { 1.0f, 0.0f, 0.0f, 0.0f }, objfile_map)
 { }
 
 
 SICAD::SICAD
 (
-    const ModelPathContainer& objfile_map,
     const GLsizei cam_width,
     const GLsizei cam_height,
     const GLfloat cam_fx,
@@ -81,7 +94,9 @@ SICAD::SICAD
     const GLfloat cam_cy,
     const GLint num_images,
     const std::string& shader_folder,
-    const std::vector<float>& ogl_to_cam
+    const std::vector<float>& ogl_to_cam,
+    const ModelPathContainer& objfile_map,
+    const ModelStreamContainer& objstream_map
 ) :
     cam_fx_(cam_fx),
     cam_fy_(cam_fy),
@@ -178,7 +193,7 @@ SICAD::SICAD
 	/* Create a framebuffer object. */
     glGenFramebuffers(1, &fbo_);
     glBindFramebuffer(GL_FRAMEBUFFER, fbo_);
-    
+
 	/* Create a framebuffer color texture. */
     glGenTextures(1, &texture_color_buffer_);
     glBindTexture(GL_TEXTURE_2D, texture_color_buffer_);
@@ -372,7 +387,27 @@ SICAD::SICAD
     std::cout << log_ID_ << "Axis frame shader succesfully set up!" << std::endl;
 
 
-    /* Load models. */
+    /* Load models from file streams, if any. */
+    for (const ModelStreamElement& pair : objstream_map)
+    {
+        auto search = model_obj_.find(pair.first);
+        if(search == model_obj_.end())
+        {
+            std::cout << log_ID_ << "Loading " + pair.first + " model for OpenGL rendering from stream." << std::endl;
+
+            model_obj_[pair.first] = new (std::nothrow) Model(pair.second);
+
+            if (model_obj_[pair.first] == nullptr)
+                throw std::runtime_error("ERROR::SICAD::CTOR\nERROR:\n\t" + pair.first + " model cannot be loaded from stream!");
+        }
+        else
+        {
+            std::cout << log_ID_ << "Skipping " + pair.first + " model for OpenGL rendering. Object name already exists." << std::endl;
+            std::cout << log_ID_ << "If you want to update " + pair.first + " model for OpenGL rendering, use the updateModel function." << std::endl;
+        }
+    }
+
+    /* Load models from file paths, if any. */
     for (const ModelPathElement& pair : objfile_map)
     {
         auto search = model_obj_.find(pair.first);
