@@ -11,6 +11,7 @@
 #include <SuperimposeMesh/Shader.h>
 #include <SuperimposeMesh/Mesh.h>
 
+#include <istream>
 #include <vector>
 #include <string>
 
@@ -24,12 +25,16 @@ class Model
 public:
     Model(const GLchar* path);
 
+    Model(const std::basic_istream<char>* model_stream);
+
     void Draw(Shader shader);
 
     bool has_texture();
 
 protected:
     void loadModel(std::string path);
+
+    void loadModel(const std::basic_istream<char>* model_stream);
 
     void processNode(aiNode* node, const aiScene* scene);
 
