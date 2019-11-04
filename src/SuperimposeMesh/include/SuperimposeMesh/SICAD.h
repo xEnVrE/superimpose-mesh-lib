@@ -317,6 +317,8 @@ public:
 
     void setMipmapsOpt(const MIPMaps& mipmaps);
 
+    void setOglToCam(const std::vector<float>& ogl_to_cam);
+
     MIPMaps getMipmapsOpt() const;
 
     int getTilesNumber() const;
