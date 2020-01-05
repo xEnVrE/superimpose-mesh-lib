@@ -70,6 +70,21 @@ SICAD::SICAD
 
 SICAD::SICAD
 (
+    const ModelStreamContainer& objstream_map,
+    const GLsizei cam_width,
+    const GLsizei cam_height,
+    const GLfloat cam_fx,
+    const GLfloat cam_fy,
+    const GLfloat cam_cx,
+    const GLfloat cam_cy,
+    const GLint num_images
+) :
+    SICAD(cam_width, cam_height, cam_fx, cam_fy, cam_cx, cam_cy, num_images, "__prc/shader", { 1.0f, 0.0f, 0.0f, 0.0f }, ModelPathContainer(), objstream_map)
+{ }
+
+
+SICAD::SICAD
+(
     const ModelPathContainer& objfile_map,
     const GLsizei cam_width,
     const GLsizei cam_height,

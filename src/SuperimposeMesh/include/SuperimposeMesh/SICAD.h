@@ -102,6 +102,26 @@ public:
     SICAD(const ModelPathContainer& objfile_map, const GLsizei cam_width, const GLsizei cam_height, const GLfloat cam_fx, const GLfloat cam_fy, const GLfloat cam_cx, const GLfloat cam_cy, const GLint num_images);
 
     /**
+     * Create a SICAD object with a dedicated OpenGL context and default shaders.
+     *
+     * Up to `num_images` images will be rendered in the same OpenGL context and the result of
+     * the process will be tiled up in a regular grid. This implies that the total number
+     * of rendered images may be less than or equal to the required `num_images`. The total
+     * number of rendered images is chosen to optimize performance and accessibility and can be
+     * accessed through `SICAD::getTilesNumber()`.
+     *
+     * The reference frame of the OpenGL virtual camera is the standard right-handed system.
+     *
+     * @param objstream_map A (tag, stream) container to associate a 'tag' to the mesh file contained in the stream 'stream'.
+     * @param cam_width Camera or image width.
+     * @param cam_height Camera or image height.
+     * @param cam_fx focal Length along the x axis in pixels.
+     * @param cam_fy focal Length along the y axis in pixels.
+     * @param num_images Number of images (i.e. viewports) rendered in the same GL context.
+     */
+    SICAD(const ModelStreamContainer& objstream_map, const GLsizei cam_width, const GLsizei cam_height, const GLfloat cam_fx, const GLfloat cam_fy, const GLfloat cam_cx, const GLfloat cam_cy, const GLint num_images);
+
+    /**
      * Create a SICAD object with a dedicated OpenGL context and custom shaders.
      * The folder where the shaders are stored can be specified in `shader_folder`.
      *
