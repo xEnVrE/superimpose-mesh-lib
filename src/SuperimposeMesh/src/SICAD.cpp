@@ -133,7 +133,9 @@ SICAD::SICAD
 
 
     /* Compute the maximum number of images that can be rendered conditioned on the maximum renderbuffer size */
-    factorize_int(num_images, std::floor(renderbuffer_size_ / image_width_), std::floor(renderbuffer_size_ / image_height_), tiles_cols_, tiles_rows_);
+    // factorize_int(num_images, std::floor(renderbuffer_size_ / image_width_), std::floor(renderbuffer_size_ / image_height_), tiles_cols_, tiles_rows_);
+    tiles_cols_ = num_images;
+    tiles_rows_ = 1;
     tiles_num_ = tiles_rows_ * tiles_cols_;
     std::cout << log_ID_ << "Required to render " + std::to_string(num_images) + " image(s)." << std::endl;
     std::cout << log_ID_ << "Allowed number or rendered images is " + std::to_string(tiles_num_) + " (" + std::to_string(tiles_rows_) + "x" + std::to_string(tiles_cols_) + " grid)." << std::endl;
