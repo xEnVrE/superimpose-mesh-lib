@@ -734,13 +734,13 @@ bool SICAD::superimpose
     /* Read before swap. glReadPixels read the current framebuffer, i.e. the back one. */
     /* See: http://stackoverflow.com/questions/16809833/opencv-image-loading-for-opengl-texture#16812529
        and http://stackoverflow.com/questions/9097756/converting-data-from-glreadpixels-to-opencvmat#9098883 */
-    cv::Mat ogl_pixel(framebuffer_height_ / tiles_rows_, framebuffer_width_ / tiles_cols_, CV_8UC3);
-    glReadBuffer(GL_COLOR_ATTACHMENT0);
-    glPixelStorei(GL_PACK_ALIGNMENT, (ogl_pixel.step & 3) ? 1 : 4);
-    glPixelStorei(GL_PACK_ROW_LENGTH, ogl_pixel.step / ogl_pixel.elemSize());
-    glReadPixels(0, framebuffer_height_ - tile_img_height_, tile_img_width_, tile_img_height_, GL_BGR, GL_UNSIGNED_BYTE, ogl_pixel.data);
+    // cv::Mat ogl_pixel(framebuffer_height_ / tiles_rows_, framebuffer_width_ / tiles_cols_, CV_8UC3);
+    // glReadBuffer(GL_COLOR_ATTACHMENT0);
+    // glPixelStorei(GL_PACK_ALIGNMENT, (ogl_pixel.step & 3) ? 1 : 4);
+    // glPixelStorei(GL_PACK_ROW_LENGTH, ogl_pixel.step / ogl_pixel.elemSize());
+    // glReadPixels(0, framebuffer_height_ - tile_img_height_, tile_img_width_, tile_img_height_, GL_BGR, GL_UNSIGNED_BYTE, ogl_pixel.data);
 
-    cv::flip(ogl_pixel, img, 0);
+    // cv::flip(ogl_pixel, img, 0);
 
 
     //cv::Mat ogl_depth(framebuffer_height_, framebuffer_width_, CV_32FC1);
@@ -1005,13 +1005,13 @@ bool SICAD::superimpose
     /* Read before swap. glReadPixels read the current framebuffer, i.e. the back one. */
     /* See: http://stackoverflow.com/questions/16809833/opencv-image-loading-for-opengl-texture#16812529
     and http://stackoverflow.com/questions/9097756/converting-data-from-glreadpixels-to-opencvmat#9098883 */
-    cv::Mat ogl_pixel(framebuffer_height_, framebuffer_width_, CV_8UC3);
-    glReadBuffer(GL_COLOR_ATTACHMENT0);
-    glPixelStorei(GL_PACK_ALIGNMENT, (ogl_pixel.step & 3) ? 1 : 4);
-    glPixelStorei(GL_PACK_ROW_LENGTH, ogl_pixel.step / ogl_pixel.elemSize());
-    glReadPixels(0, 0, framebuffer_width_, framebuffer_height_, GL_BGR, GL_UNSIGNED_BYTE, ogl_pixel.data);
+    // cv::Mat ogl_pixel(framebuffer_height_, framebuffer_width_, CV_8UC3);
+    // glReadBuffer(GL_COLOR_ATTACHMENT0);
+    // glPixelStorei(GL_PACK_ALIGNMENT, (ogl_pixel.step & 3) ? 1 : 4);
+    // glPixelStorei(GL_PACK_ROW_LENGTH, ogl_pixel.step / ogl_pixel.elemSize());
+    // glReadPixels(0, 0, framebuffer_width_, framebuffer_height_, GL_BGR, GL_UNSIGNED_BYTE, ogl_pixel.data);
 
-    cv::flip(ogl_pixel, img, 0);
+    // cv::flip(ogl_pixel, img, 0);
 
 
     //cv::Mat ogl_depth(framebuffer_height_, framebuffer_width_, CV_32FC1);
